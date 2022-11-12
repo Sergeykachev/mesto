@@ -36,3 +36,22 @@
 @import url(../blocks/profile/__button/profile__button.css);
 
 /*подключение блока profile*/
+
+/*подключение блока elements*/
+
+@import url(../blocks/elemetns/elements.css);
+@import url(../blocks/elemetns/__group/elements__group.css);
+@import url(../blocks/elemetns/__image/elements__image.css);
+@import url(../blocks/elemetns/__image-name/elements__image-name.css);
+@import url(../blocks/elemetns/__image-title/elements__image-title.css);
+@import url(../blocks/elemetns/__images/elements__images.css);
+@import url(../blocks/elemetns/__like/elements__like.css);
+
+/*подключение блока elements*/
+
+/*подключение блока footer*/
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__author/footer__author.css);
+
+/*подключение блока footer*/
