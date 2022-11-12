@@ -1,5 +1,14 @@
 .profile {
+  font-family: "Inter", Arial, sans-serif;
+  color: #fff;
   margin: 0 auto;
   padding: 0;
+  max-width: 880px;
+  max-height: 120px;
   display: flex;
+  /* display: grid;
+  grid-template-columns:
+    minmax(min-content, max-content)
+    minmax(min-content, max-content)
+    minmax(150px, max-content); */
 }
