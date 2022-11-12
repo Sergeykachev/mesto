@@ -1,0 +1,30 @@
+/* подключение глобальных стилей */
+
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+/* подключение глобальных стилей */
+
+/*подключение блока page*/
+
+@import url(../blocks/page/page.css);
+
+/*подключение блока page*/
+
+/*подключение блока header*/
+
+@import url(../blocks/header/header.css);
+
+/*подключение блока header*/
+
+/*подключение блока content*/
+
+@import url(../blocks/content/content.css);
+
+/*подключение блока content*/
+
+/*подключение блока profile*/
+
+@import url(../blocks/profile/profile.css);
+
+/*подключение блока profile*/
