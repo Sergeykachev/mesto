@@ -29,20 +29,22 @@
         </div>
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <img
-            src="./images/Edit-Button.svg"
-            alt="редактировать профиль"
-            class="profile__edit-button"
-          />
+          <button class="profile__edit-button popup_open">
+            <img
+              src="./images/icon-Button.svg"
+              alt="редактировать профиль"
+              class="profile__icon-button"
+            />
+          </button>
           <h2 class="profile__subtitle">Исследователь океана</h2>
         </div>
-        <div class="profile__add-button">
+        <button class="profile__add-button">
           <img
             src="./images/add-button.svg"
             alt="добавить картинку"
             class="profile__button"
           />
-        </div>
+        </button>
       </section>
       <!--profile end-->
 
@@ -147,10 +149,16 @@
         </button>
         <div class="popup__forms">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__name" type="text" name="Жак-Ив Кусто" />
-          <input class="popup__about" type="text" name="Исследователь океана" />
+          <input class="popup__name" type="text" placeholder="Жак-Ив Кусто" />
+          <input
+            class="popup__about"
+            type="text"
+            placeholder="Исследователь океана"
+          />
         </div>
-        <button class="popup__save"></button>
+        <button class="popup__save">
+          <span class="popup__save-text">Сохранить</span>
+        </button>
       </div>
     </section>
     <!--popup end-->

@@ -8,4 +8,9 @@
   position: relative;
   top: 50%;
   left: 50%;
+  margin-left: -215px;
+  margin-top: -115px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

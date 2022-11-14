@@ -1,2 +1,30 @@
 .popup__name {
+  max-width: 358px;
+  min-height: 27px;
+  width: 100%;
+  margin: 0 36px 30px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+
+.popup__name::placeholder {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 170px;
+  letter-spacing: 0em;
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup__name:focus {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  border-bottom: 1px solid #000;
 }

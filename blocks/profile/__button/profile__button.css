@@ -1,6 +1,21 @@
 .profile__button {
+  display: block;
   margin: 0;
   padding: 14px 64px;
   border: 2px solid #fff;
   border-radius: 2px;
+}
+
+.profile__button:hover {
+  opacity: 60%;
+  background-blend-mode: overlay;
+}
+
+.profile__button:focus {
+  outline: none;
+  border: 2px solid rgb(31, 135, 199);
+}
+
+.profile__button:active {
+  background-color: rgb(6, 11, 79);
 }
