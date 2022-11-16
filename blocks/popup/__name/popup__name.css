@@ -1,6 +1,7 @@
 .popup__name {
   max-width: 358px;
-  min-height: 27px;
+  max-height: 27px;
+  height: 100%;
   width: 100%;
   margin: 0 36px 30px;
   padding: 0;

@@ -4,6 +4,7 @@
   padding: 12px 62px;
   border: 2px solid #fff;
   border-radius: 2px;
+  width: 22px;
 }
 
 .profile__button:hover {
@@ -22,6 +23,7 @@
 
 @media screen and (max-width: 320px) {
   .profile__button {
-    padding: 12px 128px;
+    padding: 15px 131px;
+    width: 16px;
   }
 }
