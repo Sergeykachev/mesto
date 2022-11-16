@@ -4,6 +4,25 @@ const popupCloseButtonElement = popupElement.querySelector(".popup__close");
 const popupOpenButtonElement = document.querySelector(".profile__edit-button");
 const profileElement = document.querySelector(".profile");
 
+// сохранение данных формы
+
+const mainForm = popupElement.querySelector(".popup__save");
+
+mainForm.addEventListener("click", saveFormClick);
+
+function saveFormClick() {
+  const FormName = popupElement.querySelector(".popup__name").value;
+  console.log(FormName);
+  document.querySelector(".profile__title").textContent = FormName;
+
+  const FormAbout = popupElement.querySelector(".popup__about").value;
+  console.log(FormAbout);
+  document.querySelector(".profile__subtitle").textContent = FormAbout;
+  closePopup();
+}
+
+//подключаем popup
+
 const openPopup = function (event) {
   popupElement.classList.add("popup_open");
   console.log("Open popup clicked");
