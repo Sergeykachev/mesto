@@ -5,3 +5,7 @@
   height: 19px;
   align-self: end;
 }
+
+.elements__like:hover {
+  opacity: 50%;
+}

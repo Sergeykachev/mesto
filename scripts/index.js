@@ -12,13 +12,21 @@ mainForm.addEventListener("click", saveFormClick);
 
 function saveFormClick() {
   const FormName = popupElement.querySelector(".popup__name").value;
-  console.log(FormName);
   document.querySelector(".profile__title").textContent = FormName;
 
   const FormAbout = popupElement.querySelector(".popup__about").value;
-  console.log(FormAbout);
   document.querySelector(".profile__subtitle").textContent = FormAbout;
   closePopup();
+}
+
+//заливка фона элемент лайк
+
+const likeBackgroundElement = document.querySelector(".elements__like");
+
+likeBackgroundElement.addEventListener("click", changeBackground);
+
+function changeBackground() {
+  likeBackgroundElement.setAttribute("src", "images/like-black.svg");
 }
 
 //подключаем popup
