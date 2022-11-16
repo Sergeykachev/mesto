@@ -12,3 +12,27 @@
   row-gap: 16px;
   column-gap: 18px;
 }
+
+@media screen and (max-width: 580px) {
+  .profile__info {
+    margin: 22px auto 36px;
+    padding: 0;
+    row-gap: 14px;
+    column-gap: 15px;
+    width: 282px;
+    height: 54px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__info {
+    margin: 22px auto 36px;
+    padding: 0;
+    row-gap: 14px;
+    column-gap: 15px;
+    width: 282px;
+    height: 54px;
+    justify-content: center;
+  }
+}

@@ -24,3 +24,10 @@
 .popup__save:active {
   background-color: rgb(6, 11, 79);
 }
+
+@media screen and (max-width: 580px) {
+  .popup__save {
+    max-width: 238px;
+    max-height: 46px;
+  }
+}

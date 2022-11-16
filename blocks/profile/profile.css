@@ -6,9 +6,31 @@
   max-width: 880px;
   max-height: 120px;
   display: flex;
-  /* display: grid;
-  grid-template-columns:
-    minmax(min-content, max-content)
-    minmax(min-content, max-content)
-    minmax(150px, max-content); */
+}
+
+@media screen and (max-width: 888px) {
+  .profile {
+    max-width: 580px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .profile {
+    max-width: 282px;
+    width: 100%;
+    max-height: 286px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    max-width: 282px;
+    width: 100%;
+    max-height: 286px;
+    margin: 0 19px;
+  }
 }

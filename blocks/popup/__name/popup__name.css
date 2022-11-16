@@ -8,6 +8,14 @@
   border-bottom: 1px solid #000;
 }
 
+@media screen and (max-width: 580px) {
+  .popup__name {
+    max-width: 238px;
+    width: 100%;
+    margin: 0 22px 30px;
+  }
+}
+
 .popup__name::placeholder {
   margin: 0;
   padding: 0;

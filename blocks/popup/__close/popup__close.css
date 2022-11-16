@@ -17,3 +17,12 @@
   opacity: 60%;
   background-blend-mode: overlay;
 }
+
+@media screen and (max-width: 580px) {
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -36px;
+  }
+}

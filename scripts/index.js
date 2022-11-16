@@ -19,16 +19,6 @@ function saveFormClick() {
   closePopup();
 }
 
-//заливка фона элемент лайк
-
-const likeBackgroundElement = document.querySelector(".elements__like");
-
-likeBackgroundElement.addEventListener("click", changeBackground);
-
-function changeBackground() {
-  likeBackgroundElement.setAttribute("src", "images/like-black.svg");
-}
-
 //подключаем popup
 
 const openPopup = function (event) {

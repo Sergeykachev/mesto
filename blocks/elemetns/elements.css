@@ -8,3 +8,21 @@
   grid-auto-rows: repeat(auto-fill, minmax(min-content, max-content));
   row-gap: 20px;
 }
+
+@media screen and (max-width: 888px) {
+  .elements {
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .elements {
+    grid-template-columns: repeat(1, minmax(min-content, max-content));
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .elements {
+    margin: 36px auto 48px;
+  }
+}
