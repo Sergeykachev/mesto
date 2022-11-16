@@ -11,4 +11,4 @@
 1. HTML, CSS.
 2. JavaScript
 
-Сама работа на [**Pages**]()
+Сама работа на [**Pages**](https://sergeykachev.github.io/mesto/)
