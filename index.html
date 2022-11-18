@@ -8,16 +8,13 @@
     <meta name="description" content="Личный архив фотографий" />
     <meta name="author" content="Tkachev Sergey" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./vendor/fonts/fonts.css" />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
   </head>
   <body class="page">
     <!--header start-->
     <header class="header">
-      <div class="header__container">
-        <img class="header__logo" src="./images/logo.svg" alt="Логтип" />
-      </div>
+      <img class="header__logo" src="./images/logo.svg" alt="Логтип" />
     </header>
     <!--header end-->
 
@@ -25,112 +22,90 @@
       <!--profile start-->
 
       <section class="profile">
-        <div class="profile__avatar">
-          <img
-            class="profile__avatar-image"
-            src="./images/Jak-If-Kusto.svg"
-            alt="жак иф кусто"
-          />
-        </div>
+        <img
+          class="profile__avatar-image"
+          src="./images/Jak-If-Kusto.svg"
+          alt="жак иф кусто"
+        />
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button">
-            <img
-              src="./images/icon-Button.svg"
-              alt="редактировать профиль"
-              class="profile__icon-button"
-            />
-          </button>
-          <h2 class="profile__subtitle">Исследователь океана</h2>
+          <button
+            tabindex="1"
+            type="button"
+            class="profile__edit-button"
+          ></button>
+          <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add-button">
-          <img
-            src="./images/add-button.svg"
-            alt="добавить картинку"
-            class="profile__button"
-          />
-        </button>
+        <button tabindex="2" type="button" class="profile__add-button"></button>
       </section>
       <!--profile end-->
 
       <!--elements start-->
       <section class="elements">
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/karachaevsk.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Карачаевск</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/karachaevsk.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Карачаевск</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/elbrus.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Гора Эльбрус</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/elbrus.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Гора Эльбрус</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/dombai.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Домбай</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/dombai.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Домбай</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/elbrus.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Гора Эльбрус</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/elbrus.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Гора Эльбрус</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/dombai.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Домбай</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/dombai.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Домбай</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
-        <div class="elements__group">
-          <div class="elements__images">
-            <img
-              src="./images/karachaevsk.jpg"
-              alt="картинка"
-              class="elements__image"
-            />
-          </div>
-          <div class="elements__image-name">
-            <p class="elements__image-title">Карачаевск</p>
-            <img src="./images/like.svg" alt="лайк" class="elements__like" />
+        <div class="element__group">
+          <img
+            src="./images/karachaevsk.jpg"
+            alt="картинка"
+            class="element__image"
+          />
+          <div class="element__description">
+            <h2 class="element__image-title">Карачаевск</h2>
+            <button class="element__like" type="button"></button>
           </div>
         </div>
       </section>
@@ -145,34 +120,28 @@
     <!--popup start-->
     <section class="popup">
       <div class="popup__container">
-        <button class="popup__close">
-          <img
-            src="./images/Close-Icon.png"
-            alt="закрытие"
-            class="popup__close-icon"
-          />
-        </button>
-        <form class="popup__forms" name="main" action="#">
+        <button tabindex="3" type="button" class="popup__close"></button>
+        <form class="popup__forms" name="main">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input
-            class="popup__name"
+            class="popup__input popup__input_name"
             type="text"
             name="name"
-            tabindex="1"
+            tabindex="4"
             value=""
             placeholder="Жак-Ив Кусто"
           />
           <input
-            class="popup__about"
+            class="popup__input popup__input_about"
             type="text"
             name="about"
-            tabindex="2"
+            tabindex="5"
             value=""
             placeholder="Исследователь океана"
           />
         </form>
-        <button tabindex="3" class="popup__save">
-          <span class="popup__save-text">Сохранить</span>
+        <button type="submit" tabindex="3" class="popup__save">
+          Сохранить
         </button>
       </div>
     </section>

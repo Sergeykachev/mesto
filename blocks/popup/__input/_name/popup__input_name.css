@@ -1,23 +1,14 @@
-.popup__name {
-  max-width: 358px;
-  max-height: 27px;
-  height: 100%;
-  width: 100%;
+.popup__input_name {
   margin: 0 36px 30px;
-  padding: 0;
-  border: 0;
-  border-bottom: 1px solid #000;
 }
 
 @media screen and (max-width: 580px) {
-  .popup__name {
-    max-width: 238px;
-    width: 100%;
+  .popup__input_name {
     margin: 0 22px 30px;
   }
 }
 
-.popup__name::placeholder {
+.popup__input_name::placeholder {
   margin: 0;
   padding: 0;
   font-family: Inter;
@@ -31,7 +22,7 @@
   left: 0;
 }
 
-.popup__name:focus {
+.popup__input_name:focus {
   border: 0;
   border-radius: 0;
   outline: 0;

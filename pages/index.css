@@ -14,7 +14,6 @@
 /*подключение блока header*/
 
 @import url(../blocks/header/header.css);
-@import url(../blocks/header/__container/header__container.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
 /*подключение блока header*/
@@ -32,10 +31,8 @@
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
-@import url(../blocks/profile/__icon-button/profile__icon-button.css);
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
-@import url(../blocks/profile/__button/profile__button.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 
 /*подключение блока profile*/
@@ -43,12 +40,11 @@
 /*подключение блока elements*/
 
 @import url(../blocks/elemetns/elements.css);
-@import url(../blocks/elemetns/__group/elements__group.css);
-@import url(../blocks/elemetns/__image/elements__image.css);
-@import url(../blocks/elemetns/__image-name/elements__image-name.css);
-@import url(../blocks/elemetns/__image-title/elements__image-title.css);
-@import url(../blocks/elemetns/__images/elements__images.css);
-@import url(../blocks/elemetns/__like/elements__like.css);
+@import url(../blocks/elemetns/__group/element__group.css);
+@import url(../blocks/elemetns/__image/element__image.css);
+@import url(../blocks/elemetns/__description/element__description.css);
+@import url(../blocks/elemetns/__image-title/element__image-title.css);
+@import url(../blocks/elemetns/__like/element__like.css);
 
 /*подключение блока elements*/
 
@@ -64,12 +60,11 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close/popup__close.css);
-@import url(../blocks/popup/__about/popup__about.css);
-@import url(../blocks/popup/__name/popup__name.css);
+@import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__save/popup__save.css);
 @import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__close-icon/popup__close-icon.css);
 @import url(../blocks/popup/_open/popup_open.css);
-@import url(../blocks/popup/__save-text/popup__save-text.css);
+@import url(../blocks/popup/__input/_about/popup__input_about.css);
+@import url(../blocks/popup/__input/_name/popup__input_name.css);
 
 /*подключение блока popup*/

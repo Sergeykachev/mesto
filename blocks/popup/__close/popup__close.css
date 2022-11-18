@@ -10,7 +10,9 @@
   appearance: none;
   border: 0;
   border-radius: 0;
-  background: 0;
+  background: none;
+  background-image: url(../../../images/Close-Icon.png);
+  background-size: contain;
 }
 
 .popup__close:hover {
