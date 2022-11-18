@@ -3,43 +3,39 @@ let popupElement = document.querySelector('.popup');
 let popupCloseButtonElement = popupElement.querySelector('.popup__close');
 let popupOpenButtonElement = document.querySelector('.profile__edit-button');
 let profileElement = document.querySelector('.profile');
-
+let mainForm = popupElement.querySelector('.popup__save');
+let formElementName = popupElement.querySelector('.popup__input_name');
+let formElementAbout = popupElement.querySelector('.popup__input_about');
+let profileElementTitle = document.querySelector('.profile__title');
+let profileElementSubtitle = document.querySelector('.profile__subtitle');
 // сохранение данных формы
 
-let mainForm = popupElement.querySelector('.popup__save');
+function saveFormClick(evt) {
+  evt.preventDefault(evt);
 
-function saveFormClick(event) {
-  evt.preventDefault(event);
-  let FormName = popupElement.querySelector('.popup__name').value;
-  document.querySelector('.profile__title').textContent = FormName;
+  profileElementTitle.textContent = formElementName.value;
 
-  let FormAbout = popupElement.querySelector('.popup__about').value;
-  document.querySelector('.profile__subtitle').textContent = FormAbout;
+  profileElementSubtitle.textContent = formElementAbout.value;
+
   closePopup();
 }
 
 //подключаем popup
 
-let openPopup = function (event) {
+let openPopup = function () {
   popupElement.classList.add('popup_open');
-  console.log('Open popup clicked');
+
+  profileElementSubtitle.textContent = formElementAbout.value;
+
+  profileElementTitle.textContent = formElementName.value;
 };
 
 let closePopup = function () {
   popupElement.classList.remove('popup_open');
 };
 
-let closePopupByClickOnOverlay = function (event) {
-  console.log(event.target, event.currentTarget);
-  if (event.target !== event.currentTarget) {
-    return;
-  }
-
-  closePopup();
-};
-
 // регистрируем обработчик событий по клику
 mainForm.addEventListener('submit', saveFormClick);
+mainForm.addEventListener('click', saveFormClick);
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
-popupElement.addEventListener('click', closePopupByClickOnOverlay);
