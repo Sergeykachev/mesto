@@ -16,8 +16,7 @@
 }
 
 .popup__close:hover {
-  opacity: 60%;
-  background-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 580px) {

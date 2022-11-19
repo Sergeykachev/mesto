@@ -19,8 +19,8 @@
     margin: 22px auto 36px;
     padding: 0;
     row-gap: 14px;
-    width: 282px;
-    height: 54px;
+    max-width: 282px;
+    width: 100%;
     justify-content: center;
   }
 }

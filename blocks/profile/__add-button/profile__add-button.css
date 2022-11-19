@@ -12,8 +12,7 @@
 }
 
 .profile__add-button:hover {
-  opacity: 60%;
-  background-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 .profile__add-button:focus {
@@ -29,7 +28,6 @@
   .profile__add-button {
     max-width: 282px;
     width: 100%;
-    min-height: 50px;
     background-size: 16px;
   }
 }
