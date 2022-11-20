@@ -40,7 +40,7 @@
 /*подключение блока elements*/
 
 @import url(../blocks/elemetns/elements.css);
-@import url(../blocks/elemetns/__group/element__group.css);
+@import url(../blocks/elemetns/element/element.css);
 @import url(../blocks/elemetns/__image/element__image.css);
 @import url(../blocks/elemetns/__description/element__description.css);
 @import url(../blocks/elemetns/__image-title/element__image-title.css);
