@@ -28,7 +28,6 @@
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
-@import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
 @import url(../blocks/profile/__title/profile__title.css);
@@ -66,5 +65,6 @@
 @import url(../blocks/popup/_open/popup_open.css);
 @import url(../blocks/popup/__input/_about/popup__input_about.css);
 @import url(../blocks/popup/__input/_name/popup__input_name.css);
+@import url(../blocks/popup/__forms/popup__forms.css);
 
 /*подключение блока popup*/

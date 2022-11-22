@@ -1,9 +1,9 @@
 .popup__close {
   margin: 0;
   padding: 0;
-  width: 32px;
+  min-width: 32px;
   min-height: 32px;
-  position: relative;
+  position: absolute;
   right: -40px;
   top: -40px;
   border: 0;
@@ -12,7 +12,6 @@
   background-image: url(../../../images/Close-Icon.png);
   background-size: contain;
   background-position: center;
-  align-self: flex-end;
 }
 
 .popup__close:hover {
@@ -21,7 +20,7 @@
 
 @media screen and (max-width: 580px) {
   .popup__close {
-    width: 20px;
+    min-width: 20px;
     min-height: 20px;
     right: 0px;
     top: -36px;
