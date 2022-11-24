@@ -24,9 +24,15 @@
   background-color: rgb(6, 11, 79);
 }
 
+@media screen and (max-width: 580px) {
+  .profile__add-button {
+    min-width: 282px;
+    background-size: 16px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__add-button {
     max-width: 282px;
-    background-size: 16px;
   }
 }

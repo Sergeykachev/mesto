@@ -9,7 +9,6 @@
     <meta name="author" content="Tkachev Sergey" />
     <title>Mesto</title>
     <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
   </head>
   <body class="page">
     <!--header start-->
@@ -35,42 +34,42 @@
       <!--elements start-->
       <section class="elements">
         <div class="element">
-          <img src="./images/karachaevsk.jpg" alt="картинка" class="element__image" />
+          <img src="./images/karachaevsk.jpg" alt="Карачаево" class="element__image" />
           <div class="element__description">
             <h2 class="element__image-title">Карачаево - Черкесия</h2>
             <button class="element__like" type="button"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/elbrus.jpg" alt="картинка" class="element__image" />
+          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image" />
           <div class="element__description">
             <h2 class="element__image-title">Гора Эльбрус</h2>
             <button class="element__like" type="button"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/dombai.jpg" alt="картинка" class="element__image" />
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__image" />
           <div class="element__description">
             <h2 class="element__image-title">Домбай</h2>
             <button class="element__like" type="button"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/elbrus.jpg" alt="картинка" class="element__image" />
+          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image" />
           <div class="element__description">
-            <h2 class="element__image-title">Гора Эльбрус</h2>
+            <h2 class="element__image-title">Эльбрус</h2>
             <button class="element__like" type="button"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/dombai.jpg" alt="картинка" class="element__image" />
+          <img src="./images/dombai.jpg" alt="Домбай" class="element__image" />
           <div class="element__description">
-            <h2 class="element__image-title">Домбай</h2>
+            <h2 class="element__image-title">Гора Домбай</h2>
             <button class="element__like" type="button"></button>
           </div>
         </div>
         <div class="element">
-          <img src="./images/karachaevsk.jpg" alt="картинка" class="element__image" />
+          <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__image" />
           <div class="element__description">
             <h2 class="element__image-title">Карачаевск</h2>
             <button class="element__like" type="button"></button>
@@ -88,17 +87,31 @@
     <!--popup start-->
     <section class="popup">
       <div class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
         <button tabindex="3" type="button" class="popup__close"></button>
         <form class="popup__forms" name="form">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__input popup__input_name" type="text" name="name" tabindex="4" value="" placeholder="Жак-Ив Кусто" />
-          <input class="popup__input popup__input_about" type="text" name="about" tabindex="5" value="" placeholder="Исследователь океана" />
+          <input
+            class="popup__input popup__input_form_name"
+            type="text"
+            name="name"
+            tabindex="4"
+            value=""
+            placeholder="Жак-Ив Кусто"
+          />
+          <input
+            class="popup__input popup__input_form_about"
+            type="text"
+            name="about"
+            tabindex="5"
+            value=""
+            placeholder="Исследователь океана"
+          />
+          <button type="submit" tabindex="6" class="popup__save">Сохранить</button>
         </form>
-        <button type="submit" tabindex="6" class="popup__save">Сохранить</button>
       </div>
     </section>
     <!--popup end-->
 
-    <script src="./scripts/index.js"></script>
+    <script defer src="./scripts/index.js"></script>
   </body>
 </html>

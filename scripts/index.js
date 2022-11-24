@@ -3,19 +3,32 @@ let popupElement = document.querySelector('.popup');
 let popupCloseButtonElement = popupElement.querySelector('.popup__close');
 let popupOpenButtonElement = document.querySelector('.profile__edit-button');
 let profileElement = document.querySelector('.profile');
-let mainForm = popupElement.querySelector('.popup__save');
-let formElementName = popupElement.querySelector('.popup__input_name');
-let formElementAbout = popupElement.querySelector('.popup__input_about');
-let profileElementTitle = document.querySelector('.profile__title');
-let profileElementSubtitle = document.querySelector('.profile__subtitle');
-// сохранение данных формы
 
+// Находим форму в DOM
+let mainForm = popupElement.querySelector('.popup__forms');
+
+// Находим поля формы в DOM
+let formElementName = mainForm.querySelector('.popup__input_form_name');
+let formElementAbout = mainForm.querySelector('.popup__input_form_about');
+
+// Обработчик «отправки» формы, хотя пока
+// она никуда отправляться не будет
 function saveFormClick(evt) {
-  evt.preventDefault(evt);
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  // Так мы можем определить свою логику отправки.
+  // О том, как это делать, расскажем позже.
 
-  profileElementTitle.textContent = formElementName.value;
+  // Получите значение полей formElementName и formElementAbout из свойства value
+  formElementName.value;
+  formElementAbout.value;
 
-  profileElementSubtitle.textContent = formElementAbout.value;
+  // Выберите элементы, куда должны быть вставлены значения полей
+  let profileElementTitle = profileElement.querySelector('.profile__title');
+  let profileElementSubtitle = profileElement.querySelector('.profile__subtitle');
+
+  // Вставьте новые значения с помощью textContent
+  formElementName.value = profileElementTitle.textContent;
+  formElementAbout.value = profileElementSubtitle.textContent;
 
   closePopup();
 }
@@ -24,18 +37,15 @@ function saveFormClick(evt) {
 
 let openPopup = function () {
   popupElement.classList.add('popup_open');
-
-  profileElementSubtitle.textContent = formElementAbout.value;
-
-  profileElementTitle.textContent = formElementName.value;
 };
 
 let closePopup = function () {
   popupElement.classList.remove('popup_open');
 };
 
-// регистрируем обработчик событий по клику
+// Прикрепляем обработчик к форме:
+// он будет следить за событием “submit” - «отправка»
 mainForm.addEventListener('submit', saveFormClick);
-mainForm.addEventListener('click', saveFormClick);
+// регистрируем обработчики событий по клику
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);

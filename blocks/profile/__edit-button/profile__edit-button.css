@@ -8,6 +8,7 @@
   border-radius: 0;
   background: none;
   background-image: url('../../../images/icon-Button.svg');
+  background-size: cover;
 }
 
 .profile__edit-button:hover {
@@ -22,12 +23,4 @@
 
 .profile__edit-button:active {
   background-color: rgb(6, 11, 79);
-}
-
-@media screen and (max-width: 320px) {
-  .profile__edit-button {
-    background-size: contain;
-    min-width: 16px;
-    min-height: 16px;
-  }
 }
