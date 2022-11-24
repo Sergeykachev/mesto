@@ -1,5 +1,6 @@
 .profile__info {
   margin-left: 30px;
+  margin-right: 30px;
   align-self: center;
   flex-basis: 100%;
   display: grid;
@@ -19,8 +20,8 @@
     margin: 22px auto 36px;
     padding: 0;
     row-gap: 14px;
-    width: 282px;
-    height: 54px;
+    max-width: 282px;
+    width: 100%;
     justify-content: center;
   }
 }

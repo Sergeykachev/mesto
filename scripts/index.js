@@ -1,45 +1,41 @@
 // делаем выборку дом элементов
-let popupElement = document.querySelector(".popup");
-let popupCloseButtonElement = popupElement.querySelector(".popup__close");
-let popupOpenButtonElement = document.querySelector(".profile__edit-button");
-let profileElement = document.querySelector(".profile");
-
+let popupElement = document.querySelector('.popup');
+let popupCloseButtonElement = popupElement.querySelector('.popup__close');
+let popupOpenButtonElement = document.querySelector('.profile__edit-button');
+let profileElement = document.querySelector('.profile');
+let mainForm = popupElement.querySelector('.popup__save');
+let formElementName = popupElement.querySelector('.popup__input_name');
+let formElementAbout = popupElement.querySelector('.popup__input_about');
+let profileElementTitle = document.querySelector('.profile__title');
+let profileElementSubtitle = document.querySelector('.profile__subtitle');
 // сохранение данных формы
 
-let mainForm = popupElement.querySelector(".popup__save");
+function saveFormClick(evt) {
+  evt.preventDefault(evt);
 
-mainForm.addEventListener("click", saveFormClick);
+  profileElementTitle.textContent = formElementName.value;
 
-function saveFormClick() {
-  let FormName = popupElement.querySelector(".popup__name").value;
-  document.querySelector(".profile__title").textContent = FormName;
+  profileElementSubtitle.textContent = formElementAbout.value;
 
-  let FormAbout = popupElement.querySelector(".popup__about").value;
-  document.querySelector(".profile__subtitle").textContent = FormAbout;
   closePopup();
 }
 
 //подключаем popup
 
-let openPopup = function (event) {
-  popupElement.classList.add("popup_open");
-  console.log("Open popup clicked");
+let openPopup = function () {
+  popupElement.classList.add('popup_open');
+
+  profileElementSubtitle.textContent = formElementAbout.value;
+
+  profileElementTitle.textContent = formElementName.value;
 };
 
 let closePopup = function () {
-  popupElement.classList.remove("popup_open");
-};
-
-let closePopupByClickOnOverlay = function (event) {
-  console.log(event.target, event.currentTarget);
-  if (event.target !== event.currentTarget) {
-    return;
-  }
-
-  closePopup();
+  popupElement.classList.remove('popup_open');
 };
 
 // регистрируем обработчик событий по клику
-popupOpenButtonElement.addEventListener("click", openPopup);
-popupCloseButtonElement.addEventListener("click", closePopup);
-popupElement.addEventListener("click", closePopupByClickOnOverlay);
+mainForm.addEventListener('submit', saveFormClick);
+mainForm.addEventListener('click', saveFormClick);
+popupOpenButtonElement.addEventListener('click', openPopup);
+popupCloseButtonElement.addEventListener('click', closePopup);

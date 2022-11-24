@@ -1,19 +1,24 @@
 .popup__save {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 358px;
-  height: 100%;
-  max-height: 50px;
+  min-height: 50px;
   align-self: center;
   border-radius: 2px;
   border: 0;
   background-color: #000;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
 }
 
 .popup__save:hover {
   opacity: 80%;
-  background-blend-mode: overlay;
 }
 
 .popup__save:focus {
@@ -28,6 +33,8 @@
 @media screen and (max-width: 580px) {
   .popup__save {
     max-width: 238px;
-    max-height: 46px;
+    min-height: 46px;
+    line-height: 17px;
+    font-size: 14px;
   }
 }

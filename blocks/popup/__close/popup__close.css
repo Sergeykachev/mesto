@@ -1,27 +1,27 @@
 .popup__close {
-  display: block;
   margin: 0;
   padding: 0;
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   position: absolute;
   right: -40px;
   top: -40px;
-  appearance: none;
   border: 0;
   border-radius: 0;
-  background: 0;
+  background: none;
+  background-image: url(../../../images/Close-Icon.png);
+  background-size: contain;
+  background-position: center;
 }
 
 .popup__close:hover {
-  opacity: 60%;
-  background-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 580px) {
   .popup__close {
-    width: 20px;
-    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     right: 0px;
     top: -36px;
   }
