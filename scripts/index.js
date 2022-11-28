@@ -11,24 +11,19 @@ let mainForm = popupElement.querySelector('.popup__forms');
 let formElementName = mainForm.querySelector('.popup__input_form_name');
 let formElementAbout = mainForm.querySelector('.popup__input_form_about');
 
+// Выберите элементы, куда должны быть вставлены значения полей
+let profileElementTitle = profileElement.querySelector('.profile__title');
+let profileElementSubtitle = profileElement.querySelector('.profile__subtitle');
+
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function saveFormClick(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   // Так мы можем определить свою логику отправки.
-  // О том, как это делать, расскажем позже.
-
-  // Получите значение полей formElementName и formElementAbout из свойства value
-  formElementName.value;
-  formElementAbout.value;
-
-  // Выберите элементы, куда должны быть вставлены значения полей
-  let profileElementTitle = profileElement.querySelector('.profile__title');
-  let profileElementSubtitle = profileElement.querySelector('.profile__subtitle');
 
   // Вставьте новые значения с помощью textContent
-  formElementName.value = profileElementTitle.textContent;
-  formElementAbout.value = profileElementSubtitle.textContent;
+  profileElementTitle.textContent = formElementName.value;
+  profileElementSubtitle.textContent = formElementAbout.value;
 
   closePopup();
 }
@@ -37,6 +32,9 @@ function saveFormClick(evt) {
 
 let openPopup = function () {
   popupElement.classList.add('popup_open');
+
+  formElementName.value = profileElementTitle.textContent;
+  formElementAbout.value = profileElementSubtitle.textContent;
 };
 
 let closePopup = function () {
