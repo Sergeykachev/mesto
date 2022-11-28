@@ -24,3 +24,10 @@
 .profile__edit-button:active {
   background-color: rgb(6, 11, 79);
 }
+
+@media screen and (max-width: 580px) {
+  .profile__edit-button {
+    min-width: 18px;
+    min-height: 18px;
+  }
+}
