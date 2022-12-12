@@ -1,15 +1,15 @@
 // делаем выборку дом элементов
-const popupElement = document.querySelector('.popup');
-const popupCloseButtonElement = popupElement.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.profile__edit-button');
+const popupAddNewUser = document.querySelector('.popup');
+const popupCloseButtonNewUser = popupAddNewUser.querySelector('.popup__close');
+const popupOpenButtonNewUser = document.querySelector('.profile__edit-button');
 const profileElement = document.querySelector('.profile');
 
 // Находим форму в DOM
-const mainForm = popupElement.querySelector('.popup__forms');
+const formAddNewUser = popupAddNewUser.querySelector('.popup__forms');
 
 // Находим поля формы в DOM
-const formElementName = mainForm.querySelector('.popup__input_form_name');
-const formElementAbout = mainForm.querySelector('.popup__input_form_about');
+const formInputNewUserName = formAddNewUser.querySelector('.popup__input_form_name');
+const formInputNewUserAbout = formAddNewUser.querySelector('.popup__input_form_about');
 
 // Выберите элементы, куда должны быть вставлены значения полей
 const profileElementTitle = profileElement.querySelector('.profile__title');
@@ -17,13 +17,13 @@ const profileElementSubtitle = profileElement.querySelector('.profile__subtitle'
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
-function saveFormClick(evt) {
+function saveFormAddNewUser(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   // Так мы можем определить свою логику отправки.
 
   // Вставьте новые значения с помощью textContent
-  profileElementTitle.textContent = formElementName.value;
-  profileElementSubtitle.textContent = formElementAbout.value;
+  profileElementTitle.textContent = formInputNewUserName.value;
+  profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
   closePopup();
 }
@@ -31,22 +31,22 @@ function saveFormClick(evt) {
 //подключаем popup
 
 const openPopup = function () {
-  popupElement.classList.add('popup_open');
+  popupAddNewUser.classList.add('popup_open');
 
-  formElementName.value = profileElementTitle.textContent;
-  formElementAbout.value = profileElementSubtitle.textContent;
+  formInputNewUserName.value = profileElementTitle.textContent;
+  formInputNewUserAbout.value = profileElementSubtitle.textContent;
 };
 
 const closePopup = function () {
-  popupElement.classList.remove('popup_open');
+  popupAddNewUser.classList.remove('popup_open');
 };
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-mainForm.addEventListener('submit', saveFormClick);
+formAddNewUser.addEventListener('submit', saveFormAddNewUser);
 // регистрируем обработчики событий по клику
-popupOpenButtonElement.addEventListener('click', openPopup);
-popupCloseButtonElement.addEventListener('click', closePopup);
+popupOpenButtonNewUser.addEventListener('click', openPopup);
+popupCloseButtonNewUser.addEventListener('click', closePopup);
 
 // шесть карточек из коробки делаем выборку элементов
 const popupProfile = document.querySelector('.popup-profile');
