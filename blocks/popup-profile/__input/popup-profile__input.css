@@ -1,0 +1,30 @@
+.popup-profile__input {
+  max-width: 358px;
+  width: 100%;
+  min-height: 27px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 580px) {
+  .popup-profile__input {
+    max-width: 238px;
+  }
+}
+
+.popup-profile__input::placeholder {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 170px;
+  letter-spacing: 0em;
+  color: #000;
+}
+
+.popup-profile__input:focus {
+  border-radius: 0;
+  outline: 0;
+  border: 1px solid rgb(77, 92, 224);
+}

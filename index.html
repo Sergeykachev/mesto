@@ -32,50 +32,7 @@
       <!--profile end-->
 
       <!--elements start-->
-      <section class="elements">
-        <div class="element">
-          <img src="./images/karachaevsk.jpg" alt="Карачаево" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Карачаево - Черкесия</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Гора Эльбрус</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img src="./images/dombai.jpg" alt="Домбай" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Домбай</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Эльбрус</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img src="./images/dombai.jpg" alt="Домбай" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Гора Домбай</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__image" />
-          <div class="element__description">
-            <h2 class="element__image-title">Карачаевск</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </div>
-      </section>
+      <section class="elements"></section>
       <!--elements end-->
     </main>
     <!--footer start-->
@@ -112,6 +69,54 @@
     </section>
     <!--popup end-->
 
+    <!--popupAddButton start-->
+    <section class="popup-profile">
+      <div class="popup-profile__container">
+        <h2 class="popup-profile__title">Новое место</h2>
+        <button tabindex="7" type="button" class="popup-profile__close"></button>
+        <form class="popup-profile__forms" name="form">
+          <input
+            class="popup-profile__input popup-profile__input_form_name-element"
+            type="text"
+            name="name"
+            tabindex="4"
+            value=""
+            placeholder="Название"
+          />
+          <input
+            class="popup-profile__input popup-profile__input_form_link-element"
+            type="text"
+            name="about"
+            tabindex="8"
+            value=""
+            placeholder="Ссылка на картинку"
+          />
+          <button type="submit" tabindex="6" class="popup-profile__create">Создать</button>
+        </form>
+      </div>
+    </section>
+    <!--popupAddButton end-->
+    <!--popup watch pictures-->
+    <section class="popup-slaider">
+      <div class="popup-slaider__container">
+        <button tabindex="3" type="button" class="popup-slaider__close"></button>
+        <img src="" alt="" class="popup-slaider__pictires" />
+        <p class="popup-slaider__subtitle">textcontent</p>
+      </div>
+    </section>
+    <!--popup watch pictures end-->
+    <!--template-->
+    <template class="template">
+      <div class="element">
+        <button class="element__delete" type="button"></button>
+        <img class="element__image" alt="" />
+        <div class="element__description">
+          <h2 class="element__image-title"></h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </div>
+    </template>
+    <!--template-->
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>

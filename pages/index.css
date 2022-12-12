@@ -38,12 +38,14 @@
 
 /*подключение блока elements*/
 
-@import url(../blocks/elemetns/elements.css);
+@import url(../blocks/elements/elements.css);
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__description/element__description.css);
 @import url(../blocks/element/__image-title/element__image-title.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/_change-like/element_change-like.css);
+@import url(../blocks/element/__delete/element__delete.css);
 
 /*подключение блока elements*/
 
@@ -67,3 +69,28 @@
 @import url(../blocks/popup/_form/popup__input_form_name.css);
 
 /*подключение блока popup*/
+
+/*подключение блока popup-profile*/
+
+@import url(../blocks/popup-profile/popup-profile.css);
+@import url(../blocks/popup-profile/__input/popup-profile__input.css);
+@import url(../blocks/popup-profile/_form/popup-profile__input_form_link-element.css);
+@import url(../blocks/popup-profile/_form/popup-profile__input_form_name-element.css);
+@import url(../blocks/popup-profile/__create/popup-profile__create.css);
+@import url(../blocks/popup-profile/_open-button/popup_open-button.css);
+@import url(../blocks/popup-profile/__close/popup-profile__close.css);
+@import url(../blocks/popup-profile/__container/popup-profile__container.css);
+@import url(../blocks/popup-profile/__title/popup-profile__title.css);
+
+/*подключение блока popup-profile*/
+
+/*подключение блока popup-slider*/
+
+@import url(../blocks/popup-slaider/popup-slaider.css);
+@import url(../blocks/popup-slaider/_open-click/popup_open-click.css);
+@import url(../blocks/popup-slaider/__subtitle/popup-slaider__subtitle.css);
+@import url(../blocks/popup-slaider/__pictires/popup-slaider__pictires.css);
+@import url(../blocks/popup-slaider/__container/popup-slaider__container.css);
+@import url(../blocks/popup-slaider/__close/popup-slaider__close.css);
+
+/*подключение блока popup-slider*/
