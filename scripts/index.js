@@ -25,7 +25,7 @@ function saveFormAddNewUser(evt) {
   profileElementTitle.textContent = formInputNewUserName.value;
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
-  closePopup();
+  closePopup(formAddNewUser.reset());
 }
 
 //подключаем popup
@@ -33,8 +33,9 @@ function saveFormAddNewUser(evt) {
 const openPopup = function () {
   popupAddNewUser.classList.add('popup_open');
 
-  formInputNewUserName.value = profileElementTitle.textContent;
-  formInputNewUserAbout.value = profileElementSubtitle.textContent;
+  // закоментированно для того, чтобы видет работу reset в форме
+  // formInputNewUserName.value = profileElementTitle.textContent;
+  // formInputNewUserAbout.value = profileElementSubtitle.textContent;
 };
 
 const closePopup = function () {
@@ -71,6 +72,33 @@ profileRemoveButton.addEventListener('click', profileCloseButton);
 
 //массив элементов карточек
 
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+  },
+];
+
 // Находим поля формы
 const profileForm = popupProfile.querySelector('.popup-profile__forms');
 const formCreateButton = profileForm.querySelector('.popup-profile__create');
@@ -78,10 +106,10 @@ const formInputName = profileForm.querySelector('.popup-profile__input_form_name
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
 // получаем попап увеличения картинки
-const popupSlaider = document.querySelector('.popup-slaider');
-const popupSlaiderPictures = popupSlaider.querySelector('.popup-slaider__pictires');
-const popupSlaiderSubtitle = popupSlaider.querySelector('.popup-slaider__subtitle');
-const popupSlaiderClose = popupSlaider.querySelector('.popup-slaider__close');
+const profileSlaider = document.querySelector('.popup-slaider');
+const profileSlaiderPictures = profileSlaider.querySelector('.popup-slaider__pictires');
+const profileSlaiderSubtitle = profileSlaider.querySelector('.popup-slaider__subtitle');
+const profileSlaiderClose = profileSlaider.querySelector('.popup-slaider__close');
 
 // Находим элементы карточки
 const sectionElements = document.querySelector('.elements');
@@ -103,14 +131,14 @@ function createCardElements({ name, link }) {
   elementImage.alt = name;
 
   //слушатели событий удаления и клика по лайку
-  elementLikeButton.addEventListener('click', elementLikeCard);
-  elementDeleteButton.addEventListener('click', elementDeleteCard);
+  elementLikeButton.addEventListener('click', hendlerLikeCard);
+  elementDeleteButton.addEventListener('click', hendlerDeleteCard);
 
   //получаем элементы из shadowDom по клику для увеличения картинки
-  elementImage.addEventListener('click', function popupSlaiderOpen() {
-    popupSlaider.classList.add('popup_open-click');
-    popupSlaiderPictures.src = link;
-    popupSlaiderSubtitle.textContent = name;
+  elementImage.addEventListener('click', function profileSlaiderOpen() {
+    profileSlaider.classList.add('popup_open-click');
+    profileSlaiderPictures.src = link;
+    profileSlaiderSubtitle.textContent = name;
   });
 
   return elementsCard;
@@ -128,11 +156,17 @@ function sendFormSubmit(evt) {
   };
 
   // создаем новую карту в начале массива
-  const newElement = createCardElements(takingElemensValue);
-  sectionElements.prepend(newElement);
+  function renderCard() {
+    createCard = () => {
+      const newElement = createCardElements(takingElemensValue);
+      sectionElements.prepend(newElement);
+    };
+    createCard();
+  }
+  renderCard();
 
   // закрываем форму
-  profileCloseButton();
+  profileCloseButton(profileForm.reset());
 }
 
 // перебор массива и добавление элементов
@@ -143,33 +177,33 @@ initialCards.forEach(function ({ name, link }) {
 });
 
 // добавляем лайк
-function elementLikeCard(evt) {
+function hendlerLikeCard(evt) {
   evt.target.classList.toggle('element_change-like');
 }
 
 //удаляем карточку
-function elementDeleteCard(evt) {
+function hendlerDeleteCard(evt) {
   evt.target.closest('.element').remove();
 }
 
-//отправляем форму
-profileForm.addEventListener('submit', sendFormSubmit);
-
-//функция отслеживания клика и закрытия popupSlaider по странице
-const closePopupSlaiderByClickSite = function (event) {
+//функция отслеживания клика и закрытия profileSlaider по странице
+const closeProfileSlaiderByClickSite = function (event) {
   if (event.target !== event.currentTarget) {
     return;
   }
 
-  popupSlaiderRemove();
+  removeProfileSlaider();
 };
-//закрытие popupSlaider
-function popupSlaiderRemove() {
-  popupSlaider.classList.remove('popup_open-click');
+//закрытие profileSlaider
+function removeProfileSlaider() {
+  profileSlaider.classList.remove('popup_open-click');
 }
 
 //слушатель закрытие попап слайдера
-popupSlaiderClose.addEventListener('click', popupSlaiderRemove);
+profileSlaiderClose.addEventListener('click', removeProfileSlaider);
 
-//слушатель клика за границе popupSlaider
-popupSlaider.addEventListener('click', closePopupSlaiderByClickSite);
+//отправляем форму
+profileForm.addEventListener('submit', sendFormSubmit);
+
+//слушатель клика за границе profileSlaider
+profileSlaider.addEventListener('click', closeProfileSlaiderByClickSite);

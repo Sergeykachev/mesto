@@ -53,7 +53,8 @@
             name="name"
             tabindex="4"
             value=""
-            placeholder="Жак-Ив Кусто"
+            placeholder="Ваше имя"
+            required
           />
           <input
             class="popup__input popup__input_form_about"
@@ -61,7 +62,8 @@
             name="about"
             tabindex="5"
             value=""
-            placeholder="Исследователь океана"
+            placeholder="Профессия"
+            required
           />
           <button type="submit" tabindex="6" class="popup__save">Сохранить</button>
         </form>
@@ -82,14 +84,16 @@
             tabindex="4"
             value=""
             placeholder="Название"
+            required
           />
           <input
             class="popup-profile__input popup-profile__input_form_link-element"
-            type="text"
+            type="url"
             name="about"
             tabindex="8"
             value=""
             placeholder="Ссылка на картинку"
+            required
           />
           <button type="submit" tabindex="6" class="popup-profile__create">Создать</button>
         </form>
@@ -118,6 +122,5 @@
     </template>
     <!--template-->
     <script defer src="./scripts/index.js"></script>
-    <script defer src="./scripts/cards.js"></script>
   </body>
 </html>
