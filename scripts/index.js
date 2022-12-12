@@ -154,7 +154,6 @@ function sendFormSubmit(evt) {
     link: formInputLink.value,
   };
 
-  console.log(initialCards);
   // создаем новую карту в начале массива
   const newElement = createCardElements(takingElemensValue);
   sectionElements.prepend(newElement);
