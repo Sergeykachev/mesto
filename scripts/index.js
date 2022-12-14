@@ -57,7 +57,7 @@ const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
-//универсальные функции открытия, закрытия popup-profile
+//универсальные функции открытия, закрытия popup-profile формы шесть карточек
 function openProfileFormButton(elem) {
   elem.classList.add('popup_open-button');
 }
@@ -73,12 +73,17 @@ function realizeOpenProfileFormButton() {
 
 function realizeCloseProfileFormButton() {
   closeProfileFormButton(popupProfile);
+}
 
+//  добавляем новую карту и отправляем форму
+
+function createProfileFormButton() {
   // получаем новые значения
   const takingElemensValue = {
     name: formInputName.value,
     link: formInputLink.value,
   };
+
   // создаем новую карту в начале массива
   function renderCard() {
     createCard = () => {
@@ -88,10 +93,9 @@ function realizeCloseProfileFormButton() {
     createCard();
   }
   renderCard();
-
-  // закрываем форму
-  // profileFormCloseButton(profileForm.reset());
+  realizeCloseProfileFormButton(profileForm.reset());
 }
+
 // получаем значения для отправки формы
 function sendClickProfileForm(evt) {
   evt.preventDefault();
@@ -103,6 +107,7 @@ function sendClickProfileForm(evt) {
 // регистрируем обработчики событий по клику
 profileAddButton.addEventListener('click', realizeOpenProfileFormButton);
 profileRemoveButton.addEventListener('click', realizeCloseProfileFormButton);
+profileCreateButton.addEventListener('click', createProfileFormButton);
 //отправляем форму
 profileForm.addEventListener('submit', sendClickProfileForm);
 
@@ -175,8 +180,6 @@ function createCardElements({ name, link }) {
 
   return elementsCard;
 }
-
-//  добавляем новую карту и отправляем форму
 
 // перебор массива и добавление элементов
 initialCards.forEach(function ({ name, link }) {
