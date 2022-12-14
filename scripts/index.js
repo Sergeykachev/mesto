@@ -28,7 +28,7 @@ function saveFormAddNewUser(evt) {
   closeMainPopup(popupMain, formAddNewUser.reset());
 }
 
-//универсальные функции popup
+//универсальные функции открытия, закрытия popup
 
 function openMainPopup(elem) {
   elem.classList.add('popup_open');
@@ -51,18 +51,60 @@ const profileAddButton = profileElement.querySelector('.profile__add-button');
 const profileRemoveButton = popupProfile.querySelector('.popup-profile__close');
 const profileCreateButton = popupProfile.querySelector('.popup-profile__create');
 
-//подключаем popup-profile
-const profileOpenButton = function () {
-  popupProfile(openPopup);
-};
+// Находим поля формы шесть карточек
+const profileForm = popupProfile.querySelector('.popup-profile__forms');
+const formCreateButton = profileForm.querySelector('.popup-profile__create');
+const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
+const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
-const profileCloseButton = function () {
-  popupProfile.classList.remove('popup_open-button');
-};
+//универсальные функции открытия, закрытия popup-profile
+function openProfileFormButton(elem) {
+  elem.classList.add('popup_open-button');
+}
+
+function closeProfileFormButton(elem) {
+  elem.classList.remove('popup_open-button');
+}
+
+// функции открытия и закрытия popup-profile
+function realizeOpenProfileFormButton() {
+  openProfileFormButton(popupProfile);
+}
+
+function realizeCloseProfileFormButton() {
+  closeProfileFormButton(popupProfile);
+
+  // получаем новые значения
+  const takingElemensValue = {
+    name: formInputName.value,
+    link: formInputLink.value,
+  };
+  // создаем новую карту в начале массива
+  function renderCard() {
+    createCard = () => {
+      const newElement = createCardElements(takingElemensValue);
+      sectionElements.prepend(newElement);
+    };
+    createCard();
+  }
+  renderCard();
+
+  // закрываем форму
+  // profileFormCloseButton(profileForm.reset());
+}
+// получаем значения для отправки формы
+function sendClickProfileForm(evt) {
+  evt.preventDefault();
+  formInputName.value;
+  formInputLink.value;
+  realizeCloseProfileFormButton();
+}
 
 // регистрируем обработчики событий по клику
-profileAddButton.addEventListener('click', profileOpenButton);
-profileRemoveButton.addEventListener('click', profileCloseButton);
+profileAddButton.addEventListener('click', realizeOpenProfileFormButton);
+profileRemoveButton.addEventListener('click', realizeCloseProfileFormButton);
+//отправляем форму
+profileForm.addEventListener('submit', sendClickProfileForm);
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
@@ -94,12 +136,6 @@ let initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
   },
 ];
-
-// Находим поля формы
-const profileForm = popupProfile.querySelector('.popup-profile__forms');
-const formCreateButton = profileForm.querySelector('.popup-profile__create');
-const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
-const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
 // получаем попап увеличения картинки
 const profileSlaider = document.querySelector('.popup-slaider');
@@ -141,29 +177,6 @@ function createCardElements({ name, link }) {
 }
 
 //  добавляем новую карту и отправляем форму
-function sendFormSubmit(evt) {
-  evt.preventDefault();
-
-  // получаем новые значения
-
-  const takingElemensValue = {
-    name: formInputName.value,
-    link: formInputLink.value,
-  };
-
-  // создаем новую карту в начале массива
-  function renderCard() {
-    createCard = () => {
-      const newElement = createCardElements(takingElemensValue);
-      sectionElements.prepend(newElement);
-    };
-    createCard();
-  }
-  renderCard();
-
-  // закрываем форму
-  profileCloseButton(profileForm.reset());
-}
 
 // перебор массива и добавление элементов
 initialCards.forEach(function ({ name, link }) {
@@ -197,9 +210,6 @@ function removeProfileSlaider() {
 
 //слушатель закрытие попап слайдера
 profileSlaiderClose.addEventListener('click', removeProfileSlaider);
-
-//отправляем форму
-profileForm.addEventListener('submit', sendFormSubmit);
 
 //слушатель клика за границе profileSlaider
 profileSlaider.addEventListener('click', closeProfileSlaiderByClickSite);
