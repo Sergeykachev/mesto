@@ -25,10 +25,10 @@ function saveFormAddNewUser(evt) {
   profileElementTitle.textContent = formInputNewUserName.value;
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
-  closePopup(formAddNewUser.reset());
+  closeMainPopup(popupMain, formAddNewUser.reset());
 }
 
-//подключаем popup
+//универсальные функции popup
 
 function openMainPopup(elem) {
   elem.classList.add('popup_open');
