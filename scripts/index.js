@@ -30,24 +30,20 @@ function saveFormAddNewUser(evt) {
 
 //подключаем popup
 
-const openPopup = function () {
-  popupMain.classList.add('popup_open');
+function openMainPopup(elem) {
+  elem.classList.add('popup_open');
+}
 
-  // закоментированно для того, чтобы видет работу reset в форме
-  // formInputNewUserName.value = profileElementTitle.textContent;
-  // formInputNewUserAbout.value = profileElementSubtitle.textContent;
-};
-
-const closePopup = function () {
-  popupMain.classList.remove('popup_open');
-};
+function closeMainPopup(elem) {
+  elem.classList.remove('popup_open');
+}
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formAddNewUser.addEventListener('submit', saveFormAddNewUser);
 // регистрируем обработчики событий по клику
-popupOpenButtonNewUser.addEventListener('click', openPopup);
-popupCloseButtonNewUser.addEventListener('click', closePopup);
+popupOpenButtonNewUser.addEventListener('click', () => openMainPopup(popupMain));
+popupCloseButtonNewUser.addEventListener('click', () => closeMainPopup(popupMain));
 
 // шесть карточек из коробки делаем выборку элементов
 const popupProfile = document.querySelector('.popup-profile');
@@ -57,7 +53,7 @@ const profileCreateButton = popupProfile.querySelector('.popup-profile__create')
 
 //подключаем popup-profile
 const profileOpenButton = function () {
-  popupProfile.classList.add('popup_open-button');
+  popupProfile(openPopup);
 };
 
 const profileCloseButton = function () {
@@ -72,7 +68,7 @@ profileRemoveButton.addEventListener('click', profileCloseButton);
 
 //массив элементов карточек
 
-const initialCards = [
+let initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
