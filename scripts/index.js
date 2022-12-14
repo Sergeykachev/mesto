@@ -1,11 +1,11 @@
 // делаем выборку дом элементов
-const popupAddNewUser = document.querySelector('.popup');
-const popupCloseButtonNewUser = popupAddNewUser.querySelector('.popup__close');
+const popupMain = document.querySelector('.popup');
+const popupCloseButtonNewUser = popupMain.querySelector('.popup__close');
 const popupOpenButtonNewUser = document.querySelector('.profile__edit-button');
 const profileElement = document.querySelector('.profile');
 
 // Находим форму в DOM
-const formAddNewUser = popupAddNewUser.querySelector('.popup__forms');
+const formAddNewUser = popupMain.querySelector('.popup__forms');
 
 // Находим поля формы в DOM
 const formInputNewUserName = formAddNewUser.querySelector('.popup__input_form_name');
@@ -31,7 +31,7 @@ function saveFormAddNewUser(evt) {
 //подключаем popup
 
 const openPopup = function () {
-  popupAddNewUser.classList.add('popup_open');
+  popupMain.classList.add('popup_open');
 
   // закоментированно для того, чтобы видет работу reset в форме
   // formInputNewUserName.value = profileElementTitle.textContent;
@@ -39,7 +39,7 @@ const openPopup = function () {
 };
 
 const closePopup = function () {
-  popupAddNewUser.classList.remove('popup_open');
+  popupMain.classList.remove('popup_open');
 };
 
 // Прикрепляем обработчик к форме:
