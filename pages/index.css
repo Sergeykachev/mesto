@@ -76,7 +76,6 @@
 @import url(../blocks/popup-profile/_form/popup-profile__input_form_link-element.css);
 @import url(../blocks/popup-profile/_form/popup-profile__input_form_name-element.css);
 @import url(../blocks/popup-profile/__create/popup-profile__create.css);
-@import url(../blocks/popup-profile/_open-button/popup_open-button.css);
 @import url(../blocks/popup-profile/__close/popup-profile__close.css);
 @import url(../blocks/popup-profile/__container/popup-profile__container.css);
 @import url(../blocks/popup-profile/__title/popup-profile__title.css);
@@ -86,7 +85,6 @@
 /*подключение блока popup-slider*/
 
 @import url(../blocks/popup-slaider/popup-slaider.css);
-@import url(../blocks/popup-slaider/_open-click/popup_open-click.css);
 @import url(../blocks/popup-slaider/__subtitle/popup-slaider__subtitle.css);
 @import url(../blocks/popup-slaider/__pictires/popup-slaider__pictires.css);
 @import url(../blocks/popup-slaider/__container/popup-slaider__container.css);
@@ -95,4 +93,4 @@
 /*подключение блока popup-slider*/
 
 /*подключение модификатора popup_open для открытия всех popup*/
-@import url(../blocks/popup/_open/popup_open.css);
+@import url(../blocks/_open/popup_open.css);

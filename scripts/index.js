@@ -1,11 +1,11 @@
 // делаем выборку дом элементов
-const popupMain = document.querySelector('.popup');
-const popupCloseButtonNewUser = popupMain.querySelector('.popup__close');
+const popupEditProfile = document.querySelector('.popup');
+const popupCloseButtonNewUser = popupEditProfile.querySelector('.popup__close');
 const popupOpenButtonNewUser = document.querySelector('.profile__edit-button');
 const profileElement = document.querySelector('.profile');
 
 // Находим форму в DOM
-const formAddNewUser = popupMain.querySelector('.popup__forms');
+const formAddNewUser = popupEditProfile.querySelector('.popup__forms');
 
 // Находим поля формы в DOM
 const formInputNewUserName = formAddNewUser.querySelector('.popup__input_form_name');
@@ -25,7 +25,7 @@ function saveFormAddNewUser(evt) {
   profileElementTitle.textContent = formInputNewUserName.value;
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
-  closeMainPopup(popupMain, formAddNewUser.reset());
+  closeMainPopup(popupEditProfile, formAddNewUser.reset());
 }
 
 //получение значений в форму profile после открытия
@@ -50,10 +50,10 @@ function closeMainPopup(elem) {
 formAddNewUser.addEventListener('submit', saveFormAddNewUser);
 // регистрируем обработчики событий по клику
 popupOpenButtonNewUser.addEventListener('click', () => {
-  openMainPopup(popupMain);
+  openMainPopup(popupEditProfile);
   getValueForProfileForm();
 });
-popupCloseButtonNewUser.addEventListener('click', () => closeMainPopup(popupMain));
+popupCloseButtonNewUser.addEventListener('click', () => closeMainPopup(popupEditProfile));
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
@@ -98,22 +98,22 @@ const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
-//универсальные функции открытия, закрытия popup-profile формы шесть карточек
-function openProfileFormButton(elem) {
-  elem.classList.add('popup_open-button');
-}
+// //универсальные функции открытия, закрытия popup-profile формы шесть карточек
+// function openProfileFormButton(elem) {
+//   elem.classList.add('popup_open-button');
+// }
 
-function closeProfileFormButton(elem) {
-  elem.classList.remove('popup_open-button');
-}
+// function closeProfileFormButton(elem) {
+//   elem.classList.remove('popup_open-button');
+// }
 
 // функции открытия и закрытия popup-profile
 function realizeOpenProfileFormButton() {
-  openProfileFormButton(popupProfile);
+  openMainPopup(popupProfile);
 }
 
 function realizeCloseProfileFormButton() {
-  closeProfileFormButton(popupProfile);
+  closeMainPopup(popupProfile);
 }
 
 //  добавляем новую карту и отправляем форму
@@ -126,18 +126,16 @@ function createProfileFormButton() {
   };
 
   // создаем новую карту в начале массива
-  function renderCard() {
-    createCard = () => {
-      const newElement = createCardElements(takingElemensValue);
-      sectionElements.prepend(newElement);
-    };
-    createCard();
-  }
-  renderCard();
+  createCard = () => {
+    const newElement = createCardElements(takingElemensValue);
+    sectionElements.prepend(newElement);
+  };
+  createCard();
+
   realizeCloseProfileFormButton(profileForm.reset());
 }
 
-// получаем значения для отправки формы
+//получаем значения для отправки формы
 function sendClickProfileForm(evt) {
   evt.preventDefault();
   formInputName.value;
@@ -156,7 +154,7 @@ profileForm.addEventListener('submit', sendClickProfileForm);
 const profileSlaider = document.querySelector('.popup-slaider');
 const profileSlaiderPictures = profileSlaider.querySelector('.popup-slaider__pictires');
 const profileSlaiderSubtitle = profileSlaider.querySelector('.popup-slaider__subtitle');
-const profileSlaiderClose = profileSlaider.querySelector('.popup-slaider__close');
+const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
 
 // Находим элементы карточки
 const sectionElements = document.querySelector('.elements');
@@ -177,13 +175,13 @@ function createCardElements({ name, link }) {
   elementImage.src = link;
   elementImage.alt = name;
 
-  //слушатели событий удаления и клика по лайку
+  //слушатели событий удаления лайка
   elementLikeButton.addEventListener('click', hendlerLikeCard);
   elementDeleteButton.addEventListener('click', hendlerDeleteCard);
 
   //получаем элементы из shadowDom по клику для увеличения картинки
   elementImage.addEventListener('click', function profileSlaiderOpen() {
-    profileSlaider.classList.add('popup_open-click');
+    profileSlaider.classList.add('popup_open');
     profileSlaiderPictures.src = link;
     profileSlaiderSubtitle.textContent = name;
   });
@@ -218,11 +216,11 @@ const closeProfileSlaiderByClickSite = function (event) {
 };
 //закрытие profileSlaider
 function removeProfileSlaider() {
-  profileSlaider.classList.remove('popup_open-click');
+  profileSlaider.classList.remove('popup_open');
 }
 
 //слушатель закрытие попап слайдера
-profileSlaiderClose.addEventListener('click', removeProfileSlaider);
+profileSlaiderCloseButton.addEventListener('click', removeProfileSlaider);
 
 //слушатель клика за границе profileSlaider
 profileSlaider.addEventListener('click', closeProfileSlaiderByClickSite);
