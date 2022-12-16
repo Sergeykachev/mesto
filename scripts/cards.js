@@ -39,14 +39,15 @@ const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
 
-// функции открытия и закрытия popup-profile
-function realizeOpenProfileFormButton() {
-  openMainPopup(popupProfile);
-}
+// получаем попап увеличения картинки
+const profileSlaider = document.querySelector('.popup-slaider');
+const profileSlaiderPictures = profileSlaider.querySelector('.popup-slaider__pictires');
+const profileSlaiderSubtitle = profileSlaider.querySelector('.popup-slaider__subtitle');
+const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
 
-function realizeCloseProfileFormButton() {
-  closeMainPopup(popupProfile);
-}
+// Находим элементы карточки
+const sectionElements = document.querySelector('.elements');
+const elementTemlate = document.querySelector('.template').content.querySelector('.element');
 
 //  добавляем новую карту и отправляем форму
 
@@ -64,7 +65,7 @@ function createProfileFormButton() {
   };
   createCard();
 
-  realizeCloseProfileFormButton(profileForm.reset());
+  closeMainPopup(popupProfile, profileForm.reset());
 }
 
 //получаем значения для отправки формы
@@ -74,16 +75,6 @@ function sendClickProfileForm(evt) {
   formInputLink.value;
   realizeCloseProfileFormButton();
 }
-
-// получаем попап увеличения картинки
-const profileSlaider = document.querySelector('.popup-slaider');
-const profileSlaiderPictures = profileSlaider.querySelector('.popup-slaider__pictires');
-const profileSlaiderSubtitle = profileSlaider.querySelector('.popup-slaider__subtitle');
-const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
-
-// Находим элементы карточки
-const sectionElements = document.querySelector('.elements');
-const elementTemlate = document.querySelector('.template').content.querySelector('.element');
 
 // Клонирование карточки и добавляем addEventListener
 function createCardElements({ name, link }) {
@@ -145,8 +136,8 @@ function removeProfileSlaider() {
 }
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
-profileAddButton.addEventListener('click', realizeOpenProfileFormButton);
-profileRemoveButton.addEventListener('click', realizeCloseProfileFormButton);
+profileAddButton.addEventListener('click', () => openMainPopup(popupProfile));
+profileRemoveButton.addEventListener('click', () => closeMainPopup(popupProfile));
 profileCreateButton.addEventListener('click', createProfileFormButton);
 //отправляем форму пользователя в profile
 profileForm.addEventListener('submit', sendClickProfileForm);
