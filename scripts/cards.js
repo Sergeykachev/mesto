@@ -28,13 +28,13 @@ let initialCards = [
 ];
 
 // шесть карточек из коробки делаем выборку элементов
-const popupProfile = document.querySelector('.popup-profile');
+const popupNewCard = document.querySelector('.popup-profile');
 const profileAddButton = profileElement.querySelector('.profile__add-button');
-const profileRemoveButton = popupProfile.querySelector('.popup-profile__close');
-const profileCreateButton = popupProfile.querySelector('.popup-profile__create');
+const profileRemoveButton = popupNewCard.querySelector('.popup-profile__close');
+const profileCreateButton = popupNewCard.querySelector('.popup-profile__create');
 
 // Находим поля формы шесть карточек
-const profileForm = popupProfile.querySelector('.popup-profile__forms');
+const profileForm = popupNewCard.querySelector('.popup-profile__forms');
 const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
@@ -65,7 +65,7 @@ function createProfileFormButton() {
   };
   createCard();
 
-  closeMainPopup(popupProfile, profileForm.reset());
+  closeMainPopup(popupNewCard, profileForm.reset());
 }
 
 //получаем значения для отправки формы
@@ -73,7 +73,7 @@ function sendClickProfileForm(evt) {
   evt.preventDefault();
   formInputName.value;
   formInputLink.value;
-  realizeCloseProfileFormButton();
+  closeMainPopup(popupNewCard);
 }
 
 // Клонирование карточки и добавляем addEventListener
@@ -96,8 +96,8 @@ function createCardElements({ name, link }) {
   elementDeleteButton.addEventListener('click', hendlerDeleteCard);
 
   //получаем элементы из shadowDom по клику для увеличения картинки
-  elementImage.addEventListener('click', function profileSlaiderOpen() {
-    profileSlaider.classList.add('popup_open');
+  elementImage.addEventListener('click', () => {
+    openMainPopup(profileSlaider);
     profileSlaiderPictures.src = link;
     profileSlaiderSubtitle.textContent = name;
   });
@@ -128,22 +128,18 @@ const closeProfileSlaiderByClickSite = function (event) {
     return;
   }
 
-  removeProfileSlaider();
+  closeMainPopup(profileSlaider);
 };
-//закрытие profileSlaider
-function removeProfileSlaider() {
-  profileSlaider.classList.remove('popup_open');
-}
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
-profileAddButton.addEventListener('click', () => openMainPopup(popupProfile));
-profileRemoveButton.addEventListener('click', () => closeMainPopup(popupProfile));
+profileAddButton.addEventListener('click', () => openMainPopup(popupNewCard));
+profileRemoveButton.addEventListener('click', () => closeMainPopup(popupNewCard));
 profileCreateButton.addEventListener('click', createProfileFormButton);
 //отправляем форму пользователя в profile
 profileForm.addEventListener('submit', sendClickProfileForm);
 
 //слушатель закрытие попап слайдера
-profileSlaiderCloseButton.addEventListener('click', removeProfileSlaider);
+profileSlaiderCloseButton.addEventListener('click', () => closeMainPopup(profileSlaider));
 
 //слушатель клика за границе profileSlaider
 profileSlaider.addEventListener('click', closeProfileSlaiderByClickSite);
