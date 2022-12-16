@@ -28,6 +28,13 @@ function saveFormAddNewUser(evt) {
   closeMainPopup(popupMain, formAddNewUser.reset());
 }
 
+//получение значений в форму profile после открытия
+
+function getValueForProfileForm() {
+  formInputNewUserName.value = profileElementTitle.textContent;
+  formInputNewUserAbout.value = profileElementSubtitle.textContent;
+}
+
 //универсальные функции открытия, закрытия popup
 
 function openMainPopup(elem) {
@@ -42,7 +49,10 @@ function closeMainPopup(elem) {
 // он будет следить за событием “submit” - «отправка»
 formAddNewUser.addEventListener('submit', saveFormAddNewUser);
 // регистрируем обработчики событий по клику
-popupOpenButtonNewUser.addEventListener('click', () => openMainPopup(popupMain));
+popupOpenButtonNewUser.addEventListener('click', () => {
+  openMainPopup(popupMain);
+  getValueForProfileForm();
+});
 popupCloseButtonNewUser.addEventListener('click', () => closeMainPopup(popupMain));
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
