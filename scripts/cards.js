@@ -30,11 +30,11 @@ let initialCards = [
 // шесть карточек из коробки делаем выборку элементов
 const popupNewCard = document.querySelector('.popup-profile');
 const profileAddButton = profileElement.querySelector('.profile__add-button');
-const profileRemoveButton = popupNewCard.querySelector('.popup-profile__close');
+const profileRemoveButton = popupNewCard.querySelector('.popup__close');
 const profileCreateButton = popupNewCard.querySelector('.popup-profile__create');
 
 // Находим поля формы шесть карточек
-const profileForm = popupNewCard.querySelector('.popup-profile__forms');
+const profileForm = popupNewCard.querySelector('.popup__form');
 const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
@@ -69,12 +69,12 @@ function createProfileFormButton() {
 }
 
 //получаем значения для отправки формы
-function sendClickProfileForm(evt) {
-  evt.preventDefault();
-  formInputName.value;
-  formInputLink.value;
-  closeMainPopup(popupNewCard);
-}
+// function sendClickProfileForm(evt) {
+//   evt.preventDefault();
+//   formInputName.value;
+//   formInputLink.value;
+//   closeMainPopup(popupNewCard);
+// }
 
 // Клонирование карточки и добавляем addEventListener
 function createCardElements({ name, link }) {
@@ -136,7 +136,7 @@ profileAddButton.addEventListener('click', () => openMainPopup(popupNewCard));
 profileRemoveButton.addEventListener('click', () => closeMainPopup(popupNewCard));
 profileCreateButton.addEventListener('click', createProfileFormButton);
 //отправляем форму пользователя в profile
-profileForm.addEventListener('submit', sendClickProfileForm);
+// profileForm.addEventListener('submit', sendClickProfileForm);
 
 //слушатель закрытие попап слайдера
 profileSlaiderCloseButton.addEventListener('click', () => closeMainPopup(profileSlaider));

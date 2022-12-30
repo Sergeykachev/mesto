@@ -5,13 +5,22 @@
   margin: 0;
   padding: 0;
   border: 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid grey;
+  margin: 0 36px 30px;
+  position: relative;
+  color: grey;
 }
 
 @media screen and (max-width: 580px) {
   .popup__input {
     max-width: 238px;
+    margin: 0 22px 30px;
   }
+}
+
+.popup__input:valid {
+  color: black;
+  border-bottom: 1px solid black;
 }
 
 .popup__input::placeholder {

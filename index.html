@@ -44,62 +44,74 @@
     <!--popup start-->
     <section class="popup">
       <div class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
+        <h2 class="popup__title popup__title_disabled">Редактировать профиль</h2>
         <button tabindex="3" type="button" class="popup__close"></button>
-        <form class="popup__forms" name="form">
+        <form class="popup__form" name="form" action="#" novalidate>
           <input
+            id="name-input"
             class="popup__input popup__input_form_name"
             type="text"
-            name="name"
+            name="newUserName"
             tabindex="4"
             value=""
+            minlength="2"
+            maxlength="40"
             placeholder="Ваше имя"
             required
           />
+          <span class="popup__input-error" id="name-input-error"></span>
           <input
+            id="job-input"
             class="popup__input popup__input_form_about"
             type="text"
-            name="about"
+            name="newUserAbout"
             tabindex="5"
             value=""
+            minlength="2"
+            maxlength="200"
             placeholder="Профессия"
             required
           />
-          <button type="submit" tabindex="6" class="popup__save">Сохранить</button>
+          <span class="popup__input-error" id="job-input-error"></span>
+          <button type="submit" tabindex="6" class="popup__button" disabled>Сохранить</button>
         </form>
       </div>
     </section>
     <!--popup end-->
 
-    <!--popupAddButton start-->
-    <section class="popup-profile">
-      <div class="popup-profile__container">
-        <h2 class="popup-profile__title">Новое место</h2>
-        <button tabindex="7" type="button" class="popup-profile__close"></button>
-        <form class="popup-profile__forms" name="form" novalidate>
+    <!--popupAddNewCardButton start-->
+    <section class="popup-profile popup">
+      <div class="popup__container">
+        <h2 class="popup-profile__title popup__title_disabled">Новое место</h2>
+        <button tabindex="7" type="button" class="popup__close"></button>
+        <form class="popup__form" name="formProfile" action="#" novalidate>
           <input
-            class="popup-profile__input popup-profile__input_form_name-element"
+            class="popup__input popup__input_form_name-profile"
             type="text"
-            name="name"
+            name="nameNewPlace"
             tabindex="4"
             value=""
+            minlength="2"
+            maxlength="30"
             placeholder="Название"
             required
           />
+          <span class="popup__input-error" id="place-input-error"></span>
           <input
-            class="popup-profile__input popup-profile__input_form_link-element"
+            class="popup__input popup__input_form_link-profile"
             type="url"
-            name="about"
+            name="urlNewPlace"
             tabindex="8"
             value=""
             placeholder="Ссылка на картинку"
             required
           />
-          <button type="submit" tabindex="6" class="popup-profile__create">Создать</button>
+          <span class="popup__input-error" id="url-input-error"></span>
+          <button type="submit" tabindex="6" class="popup__button popup-profile__create" disabled>Создать</button>
         </form>
       </div>
     </section>
-    <!--popupAddButton end-->
+    <!--popupAddNewCardButton end-->
     <!--popup watch pictures-->
     <section class="popup-slaider">
       <div class="popup-slaider__container">

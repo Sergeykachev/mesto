@@ -1,4 +1,4 @@
-.popup__save {
+.popup__save_profile_disabled {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,30 +8,30 @@
   align-self: center;
   border-radius: 2px;
   border: 0;
-  background-color: #000;
+  background-color: grey;
   font-family: inherit;
   font-size: 18px;
   font-weight: 400;
   line-height: 100%;
   text-align: center;
-  color: #fff;
+  color: red;
 }
 
-.popup__save:hover {
-  opacity: 80%;
+.popup__save_profile_disabled:hover {
+  opacity: 100%;
 }
 
-.popup__save:focus {
+.popup__save_profile_disabled:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(31, 135, 199);
+  box-shadow: none;
 }
 
-.popup__save:active {
-  background-color: rgb(6, 11, 79);
+.popup__save_profile_disabled:active {
+  background-color: grey;
 }
 
 @media screen and (max-width: 580px) {
-  .popup__save {
+  .popup__save_profile_disabled {
     max-width: 238px;
     min-height: 46px;
     line-height: 17px;
