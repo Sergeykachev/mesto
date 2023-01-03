@@ -44,7 +44,7 @@
     <!-- popup start-->
     <section class="popup">
       <div class="popup__container">
-        <h2 class="popup__title popup__title_disabled">Редактировать профиль</h2>
+        <h2 class="popup__title">Редактировать профиль</h2>
         <button tabindex="3" type="button" class="popup__close"></button>
         <form class="popup__form" name="form" action="#" novalidate>
           <input
@@ -82,11 +82,11 @@
     <!--popupAddNewCardButton start-->
     <section class="popup-profile popup">
       <div class="popup__container">
-        <h2 class="popup-profile__title popup__title_disabled">Новое место</h2>
+        <h2 class="popup-profile__title">Новое место</h2>
         <button tabindex="7" type="button" class="popup__close"></button>
         <form class="popup__form" name="formProfile" action="#" novalidate>
           <input
-            id="name-input"
+            id="text-input"
             class="popup__input popup__input_form_name-profile"
             type="text"
             name="nameNewPlace"
@@ -97,9 +97,9 @@
             placeholder="Название"
             required
           />
-          <span class="popup__input-error" id="place-input-error"></span>
+          <span class="popup__input-error" id="text-input-error"></span>
           <input
-            id="job-input"
+            id="url-input"
             class="popup__input popup__input_form_link-profile"
             type="url"
             name="urlNewPlace"

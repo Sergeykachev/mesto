@@ -56,6 +56,16 @@
 
 /*подключение блока footer*/
 
+/*подключение блока popup-slider*/
+
+@import url(../blocks/popup-slaider/popup-slaider.css);
+@import url(../blocks/popup-slaider/__subtitle/popup-slaider__subtitle.css);
+@import url(../blocks/popup-slaider/__pictires/popup-slaider__pictires.css);
+@import url(../blocks/popup-slaider/__container/popup-slaider__container.css);
+@import url(../blocks/popup-slaider/__close/popup-slaider__close.css);
+
+/*подключение блока popup-slider*/
+
 /*подключение блока popup*/
 
 @import url(../blocks/popup/popup.css);
@@ -79,18 +89,7 @@
 /* @import url(../blocks/popup-profile/__close/popup-profile__close.css); */
 /* @import url(../blocks/popup-profile/__container/popup-profile__container.css); */
 @import url(../blocks/popup-profile/__title/popup-profile__title.css);
-
 /*подключение блока popup-profile*/
-
-/*подключение блока popup-slider*/
-
-@import url(../blocks/popup-slaider/popup-slaider.css);
-@import url(../blocks/popup-slaider/__subtitle/popup-slaider__subtitle.css);
-@import url(../blocks/popup-slaider/__pictires/popup-slaider__pictires.css);
-@import url(../blocks/popup-slaider/__container/popup-slaider__container.css);
-@import url(../blocks/popup-slaider/__close/popup-slaider__close.css);
-
-/*подключение блока popup-slider*/
 
 /*подключение стилей для всех popup*/
 @import url(../blocks/open/popup_open.css);
@@ -98,21 +97,10 @@
 @import url(../blocks/container/popup__container.css);
 @import url(../blocks/input/popup__input.css);
 @import url(../blocks/button/popup__button.css);
+/*подключение стилей для всех popup*/
 
-/* @import url(./popup/__title/popup__title.css); */
-/* @import url(./form/popup__input_form_about.css);
-@import url(./form/popup__input_form_name.css);
-@import url(./form/popup__input_form_name-profile.css);
-@import url(./form/popup__input_form_link-profile.css); */
-/* @import url(./popup-profile/__title/popup-profile__title.css); */
-/* @import url(./popup/popup__form.css); */
-
-/* @import url(./popup-profile/__save-profile/popup__save-profile.css); */
-/* @import url(./disabled/popup__save_disabled.css); */
-@import url(../blocks/disabled/popup__title_disabled.css);
-
+/*подключение стилей ошибок валидации и деактивации для popup*/
+@import url(../blocks//disabled/popup__button_disabled.css);
 @import url(../blocks/error/popup__input-error.css);
 @import url(../blocks/error/popup__input_type_error.css);
-@import url(../blocks//disabled/popup__button_disabled.css);
-
-/* @import url(../blocks/error/popup__input-error_active.css); */
+/*подключение стилей ошибок валидации и деактивации для popup*/
