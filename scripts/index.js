@@ -2,7 +2,6 @@
 const popupEditProfile = document.querySelector('.popup');
 const popupCloseButtonNewUser = popupEditProfile.querySelector('.popup__close');
 const popupOpenButtonNewUser = document.querySelector('.profile__edit-button');
-const profileElement = document.querySelector('.profile');
 
 // Находим форму в DOM
 const formAddNewUser = popupEditProfile.querySelector('.popup__form');
@@ -12,6 +11,7 @@ const formInputNewUserName = formAddNewUser.querySelector('.popup__input_form_na
 const formInputNewUserAbout = formAddNewUser.querySelector('.popup__input_form_about');
 
 // Выберите элементы, куда должны быть вставлены значения полей
+const profileElement = document.querySelector('.profile');
 const profileElementTitle = profileElement.querySelector('.profile__title');
 const profileElementSubtitle = profileElement.querySelector('.profile__subtitle');
 
