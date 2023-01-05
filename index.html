@@ -46,26 +46,34 @@
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <button tabindex="3" type="button" class="popup__close"></button>
-        <form class="popup__forms" name="form">
+        <form class="popup__form" name="form" action="#" novalidate>
           <input
+            id="name-input"
             class="popup__input popup__input_form_name"
             type="text"
             name="name"
             tabindex="4"
             value=""
+            minlength="2"
+            maxlength="40"
             placeholder="Ваше имя"
             required
           />
+          <span class="popup__input-error" id="name-input-error"></span>
           <input
+            id="job-input"
             class="popup__input popup__input_form_about"
             type="text"
             name="about"
             tabindex="5"
             value=""
+            minlength="2"
+            maxlength="200"
             placeholder="Профессия"
             required
           />
-          <button type="submit" tabindex="6" class="popup__save">Сохранить</button>
+          <span class="popup__input-error" id="job-input-error"></span>
+          <button type="submit" tabindex="6" class="popup__save popup__button popup__button_disabled" disabled>Сохранить</button>
         </form>
       </div>
     </section>
@@ -76,18 +84,23 @@
       <div class="popup-profile__container">
         <h2 class="popup-profile__title">Новое место</h2>
         <button tabindex="7" type="button" class="popup-profile__close"></button>
-        <form class="popup-profile__forms" name="form" novalidate>
+        <form class="popup__form" name="form" action="#" novalidate>
           <input
-            class="popup-profile__input popup-profile__input_form_name-element"
+            id="text-input"
+            class="popup__input popup-profile__input_form_name-element"
             type="text"
             name="name"
             tabindex="4"
             value=""
             placeholder="Название"
+            minlength="2"
+            maxlength="30"
             required
           />
+          <span class="popup__input-error" id="text-input-error"></span>
           <input
-            class="popup-profile__input popup-profile__input_form_link-element"
+            id="url-input"
+            class="popup__input popup-profile__input_form_link-element"
             type="url"
             name="about"
             tabindex="8"
@@ -95,7 +108,10 @@
             placeholder="Ссылка на картинку"
             required
           />
-          <button type="submit" tabindex="6" class="popup-profile__create">Создать</button>
+          <span class="popup__input-error" id="url-input-error"></span>
+          <button type="submit" tabindex="6" class="popup__button popup__button_disabled popup-profile__create" disabled>
+            Создать
+          </button>
         </form>
       </div>
     </section>

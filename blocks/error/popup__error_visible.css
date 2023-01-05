@@ -1,0 +1,16 @@
+.popup__error_visible {
+  display: block;
+  opacity: 1;
+  margin: 5px 36px 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: left;
+  position: absolute;
+}
+
+@media screen and (max-width: 580px) {
+  .popup__error_visible {
+    margin: 5px 22px 0;
+  }
+}

@@ -1,0 +1,12 @@
+.element__image-title {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 100%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

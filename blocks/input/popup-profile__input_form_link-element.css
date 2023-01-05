@@ -1,0 +1,9 @@
+.popup-profile__input_form_link-element {
+  margin: 48px 36px 0;
+}
+
+@media screen and (max-width: 580px) {
+  .popup-profile__input_form_link-element {
+    margin: 45px 22px 0;
+  }
+}
