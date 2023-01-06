@@ -34,7 +34,7 @@ const profileRemoveButton = popupNewCard.querySelector('.popup-profile__close');
 const profileCreateButton = popupNewCard.querySelector('.popup-profile__create');
 
 // Находим поля формы шесть карточек
-const profileForm = popupNewCard.querySelector('.popup-profile__forms');
+const profileForm = popupNewCard.querySelector('.popup__form');
 const formCreateButton = profileForm.querySelector('.popup-profile__create');
 const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
 const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
@@ -123,12 +123,14 @@ function hendlerDeleteCard(evt) {
 }
 
 //функция отслеживания клика и закрытия profileSlaider по странице
-const closeProfileSlaiderByClickSite = function (event) {
+const closePopupByClickSite = function (event) {
   if (event.target !== event.currentTarget) {
     return;
   }
 
   closeMainPopup(profileSlaider);
+  closeMainPopup(popupEditProfile);
+  closeMainPopup(popupNewCard);
 };
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
@@ -141,5 +143,7 @@ profileForm.addEventListener('submit', sendClickProfileForm);
 //слушатель закрытие попап слайдера
 profileSlaiderCloseButton.addEventListener('click', () => closeMainPopup(profileSlaider));
 
-//слушатель клика за границе profileSlaider
-profileSlaider.addEventListener('click', closeProfileSlaiderByClickSite);
+//слушатель клика за границей popup
+profileSlaider.addEventListener('click', closePopupByClickSite);
+popupEditProfile.addEventListener('click', closePopupByClickSite);
+popupNewCard.addEventListener('click', closePopupByClickSite);
