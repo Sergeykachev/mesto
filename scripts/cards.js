@@ -143,7 +143,7 @@ profileForm.addEventListener('submit', sendClickProfileForm);
 //слушатель закрытие попап слайдера
 profileSlaiderCloseButton.addEventListener('click', () => closeMainPopup(profileSlaider));
 
-//слушатель клика за границе popup
+//слушатель клика за границей popup
 profileSlaider.addEventListener('click', closePopupByClickSite);
 popupEditProfile.addEventListener('click', closePopupByClickSite);
 popupNewCard.addEventListener('click', closePopupByClickSite);

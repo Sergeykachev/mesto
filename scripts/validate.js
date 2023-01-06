@@ -1,3 +1,4 @@
+// функция показа ошибки
 const checkInputValidity = (input, config) => {
   const error = document.querySelector(`#${input.id}-error`);
 
@@ -12,11 +13,13 @@ const checkInputValidity = (input, config) => {
   }
 };
 
+// функция переключения активации кнопки 
 const toggleButton = (inputs, button, config) => {
+// функция фильтр невалидных инпутов  
   const checkEmptyInput = inputs.filter(function (input) {
     return !input.validity.valid;
   }).length;
-
+// условия переключения активации кнопки  
   if (checkEmptyInput <= 2) {
     button.classList.remove(config.inactiveButtonClass);
     button.disabled = '';
@@ -26,6 +29,13 @@ const toggleButton = (inputs, button, config) => {
   }
 };
 
+// функция сбрасывания активации кнопки после отправки на сервер 
+const resetButton = (button, config) => {
+  button.classList.add(config.inactiveButtonClass);
+    button.disabled = 'disabled';
+}
+
+// функция со слушателями сабмит, инпут и массивом инпутов. 
 const enableValidation = (config) => {
   const forms = [...document.querySelectorAll(config.formSelector)];
 
@@ -35,6 +45,7 @@ const enableValidation = (config) => {
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      resetButton(button, config);
     });
 
     inputs.forEach((input) => {
@@ -47,6 +58,7 @@ const enableValidation = (config) => {
   });
 };
 
+// функция с селекторами из задания
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -56,6 +68,7 @@ enableValidation({
   errorClass: 'popup__error_visible',
 });
 
+// слушатель закрытия модальных окон по нажатию клавишы 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeMainPopup(popupEditProfile);

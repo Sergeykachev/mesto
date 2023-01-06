@@ -101,6 +101,4 @@
 @import url(../blocks/button/popup__button_disabled.css);
 @import url(../blocks/input/popup__input_type_error.css);
 @import url(../blocks/error/popup__error_visible.css);
-@import url(../blocks/form/popup__form.css);
-@import url(../blocks/form/popup__form_active.css);
 /*подключение классов ошибки popup*/
