@@ -72,7 +72,6 @@
 /*подключение блока popup-profile*/
 
 @import url(../blocks/popup-profile/popup-profile.css);
-@import url(../blocks/popup-profile/__input/popup-profile__input.css);
 @import url(../blocks/popup-profile/__create/popup-profile__create.css);
 @import url(../blocks/popup-profile/__close/popup-profile__close.css);
 @import url(../blocks/popup-profile/__container/popup-profile__container.css);
