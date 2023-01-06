@@ -36,8 +36,8 @@ const profileCreateButton = popupNewCard.querySelector('.popup-profile__create')
 // Находим поля формы шесть карточек
 const profileForm = popupNewCard.querySelector('.popup__form');
 const formCreateButton = profileForm.querySelector('.popup-profile__create');
-const formInputName = profileForm.querySelector('.popup-profile__input_form_name-element');
-const formInputLink = profileForm.querySelector('.popup-profile__input_form_link-element');
+const formInputName = profileForm.querySelector('.popup__input_form_name-element');
+const formInputLink = profileForm.querySelector('.popup__input_form_link-element');
 
 // получаем попап увеличения картинки
 const profileSlaider = document.querySelector('.popup-slaider');
