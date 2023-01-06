@@ -5,7 +5,7 @@ const popupOpenButtonNewUser = document.querySelector('.profile__edit-button');
 const profileElement = document.querySelector('.profile');
 
 // Находим форму в DOM
-const formAddNewUser = popupEditProfile.querySelector('.popup__forms');
+const formAddNewUser = popupEditProfile.querySelector('.popup__form');
 
 // Находим поля формы в DOM
 const formInputNewUserName = formAddNewUser.querySelector('.popup__input_form_name');
@@ -31,8 +31,8 @@ function saveFormAddNewUser(evt) {
 //получение значений в форму profile после открытия
 
 function getValueForProfileForm() {
-  formInputNewUserName.value = profileElementTitle.textContent;
-  formInputNewUserAbout.value = profileElementSubtitle.textContent;
+  // formInputNewUserName.value = profileElementTitle.textContent;
+  // formInputNewUserAbout.value = profileElementSubtitle.textContent;
 }
 
 //универсальные функции открытия, закрытия popup
@@ -54,5 +54,3 @@ popupOpenButtonNewUser.addEventListener('click', () => {
   getValueForProfileForm();
 });
 popupCloseButtonNewUser.addEventListener('click', () => closeMainPopup(popupEditProfile));
-
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
