@@ -68,18 +68,18 @@ enableValidation({
 });
 
 // слушатель закрытия модальных окон по нажатию клавишы
-window.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closePopup(popupEditProfile);
   }
 });
 
-window.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closePopup(profileSlaider);
   }
 });
-window.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closePopup(popupNewCard);
   }
