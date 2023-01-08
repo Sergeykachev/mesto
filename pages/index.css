@@ -91,7 +91,7 @@
 /*подключение блока popup-slider*/
 
 /*подключение модификатора popup_open для открытия всех popup*/
-@import url(../blocks/_open/popup_open.css);
+@import url(../blocks/open/popup_open.css);
 /*подключение модификатора popup_open для открытия всех popup*/
 
 /*подключение классов ошибки popup*/
@@ -100,4 +100,3 @@
 @import url(../blocks/input/popup__input_type_error.css);
 @import url(../blocks/error/popup__error_visible.css);
 /*подключение классов ошибки popup*/
-

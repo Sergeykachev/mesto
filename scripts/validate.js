@@ -13,29 +13,28 @@ const checkInputValidity = (input, config) => {
   }
 };
 
-// функция переключения активации кнопки 
+// функция переключения активации кнопки
 const toggleButton = (inputs, button, config) => {
-// функция фильтр невалидных инпутов  
-  const checkEmptyInput = inputs.filter(function (input) {
-    return !input.validity.valid;
-  }).length;
-// условия переключения активации кнопки  
-  if (checkEmptyInput <= 2) {
+  // функция фильтр невалидных инпутов
+  const checkEmptyInput = inputs.some(function (input) {
+    return input.validity.valid;
+  });
+  // условия переключения активации кнопки
+  if (checkEmptyInput) {
     button.classList.remove(config.inactiveButtonClass);
     button.disabled = '';
   } else {
-    button.classList.add(config.inactiveButtonClass);
-    button.disabled = 'disabled';
+    resetButton(button, config);
   }
 };
 
-// функция сбрасывания активации кнопки после отправки на сервер 
+// функция сбрасывания активации кнопки после отправки на сервер
 const resetButton = (button, config) => {
   button.classList.add(config.inactiveButtonClass);
-    button.disabled = 'disabled';
-}
+  button.disabled = 'disabled';
+};
 
-// функция со слушателями сабмит, инпут и массивом инпутов. 
+// функция со слушателями сабмит, инпут и массивом инпутов.
 const enableValidation = (config) => {
   const forms = [...document.querySelectorAll(config.formSelector)];
 
@@ -68,10 +67,20 @@ enableValidation({
   errorClass: 'popup__error_visible',
 });
 
-// слушатель закрытия модальных окон по нажатию клавишы 
+// слушатель закрытия модальных окон по нажатию клавишы
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeMainPopup(popupEditProfile);
-    closeMainPopup(popupNewCard);
+    closePopup(popupEditProfile);
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closePopup(profileSlaider);
+  }
+});
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closePopup(popupNewCard);
   }
 });
