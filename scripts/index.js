@@ -201,7 +201,7 @@ profileCreateButton.addEventListener('click', createProfileFormButton);
 //слушатель закрытие попап слайдера
 profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 
-//слушатели клика закрытия модального окна по странице
+//слушатели закрытия модального окна кликом по странице
 profileSlaider.addEventListener('click', closePopupByClickWindow);
 popupEditProfile.addEventListener('click', closePopupByClickWindow);
 popupNewCard.addEventListener('click', closePopupByClickWindow);
