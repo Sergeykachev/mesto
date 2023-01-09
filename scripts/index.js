@@ -1,3 +1,32 @@
+//массив элементов карточек
+
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+  },
+];
+
 // делаем выборку дом элементов
 const popupEditProfile = document.querySelector('.popup');
 const popupCloseButtonNewUser = popupEditProfile.querySelector('.popup__close');
@@ -36,13 +65,35 @@ function getValueForProfileForm() {
 }
 
 //универсальные функции открытия, закрытия popup
-
 function openPopup(elem) {
   elem.classList.add('popup_open');
+  document.addEventListener('keydown', closeByEsc);
 }
 
 function closePopup(elem) {
   elem.classList.remove('popup_open');
+  document.removeEventListener('keydown', closeByEsc);
+}
+
+//универсальная функция закрытия popup по нажатию клавишы Escape
+
+function closeByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_open');
+
+    closePopup(openedPopup);
+  }
+}
+
+//универсальная функция закрытия модального окна по клику на страницу
+
+function closePopupByClickWindow(e) {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+  const openedPopup = document.querySelector('.popup_open');
+
+  closePopup(openedPopup);
 }
 
 // Прикрепляем обработчик к форме:
@@ -56,35 +107,6 @@ popupOpenButtonNewUser.addEventListener('click', () => {
 popupCloseButtonNewUser.addEventListener('click', () => closePopup(popupEditProfile));
 
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-//массив элементов карточек
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-];
 
 // шесть карточек из коробки делаем выборку элементов
 const popupNewCard = document.querySelector('.popup-profile');
@@ -179,22 +201,7 @@ profileCreateButton.addEventListener('click', createProfileFormButton);
 //слушатель закрытие попап слайдера
 profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 
-//слушатель клика за границей popup
-profileSlaider.addEventListener('click', (e) => {
-  if (e.target !== e.currentTarget) {
-    return;
-  }
-  closePopup(profileSlaider);
-});
-popupEditProfile.addEventListener('click', (e) => {
-  if (e.target !== e.currentTarget) {
-    return;
-  }
-  closePopup(popupEditProfile);
-});
-popupNewCard.addEventListener('click', (e) => {
-  if (e.target !== e.currentTarget) {
-    return;
-  }
-  closePopup(popupNewCard);
-});
+//слушатели закрытия модального окна кликом по странице
+profileSlaider.addEventListener('click', closePopupByClickWindow);
+popupEditProfile.addEventListener('click', closePopupByClickWindow);
+popupNewCard.addEventListener('click', closePopupByClickWindow);

@@ -66,21 +66,3 @@ enableValidation({
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible',
 });
-
-// слушатель закрытия модальных окон по нажатию клавишы
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closePopup(popupEditProfile);
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closePopup(profileSlaider);
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closePopup(popupNewCard);
-  }
-});
