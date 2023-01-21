@@ -61,6 +61,7 @@ class FormValidator {
   constructor(config, form) {
     this._config = config;
     this._form = form;
+    this._formNewCard = formNewCard;
   }
 
   // функция со слушателями сабмит, инпут и массивами инпутов, кнопок и форм.
@@ -126,12 +127,13 @@ const settings = {
   errorClass: 'popup__error_visible',
 };
 
-// const settingsFormNewCard = {
-//   inputSelector: '.popup__input-profile',
-// };
+const settingsFormNewCard = {
+  formSelector: '.popup__form-profile',
+  inputSelector: '.popup__input-profile',
+};
 const form = document.querySelector(settings.formSelector);
-
+const formNewCard = document.querySelector(settingsFormNewCard.formSelector);
 const formsValidation = new FormValidator(settings, form);
-// const formsValidationNewCard = new FormValidator(settingsFormNewCard, form);
+const formsValidationNewCard = new FormValidator(settingsFormNewCard, formNewCard);
 
-formsValidation.enableValidation();
+formsValidationNewCard.enableValidation();
