@@ -72,10 +72,13 @@
 /*подключение блока popup-profile*/
 
 @import url(../blocks/popup-profile/popup-profile.css);
+@import url(../blocks/popup-profile/__input-profile/popup__input-profile.css);
 @import url(../blocks/popup-profile/__create/popup-profile__create.css);
 @import url(../blocks/popup-profile/__close/popup-profile__close.css);
 @import url(../blocks/popup-profile/__container/popup-profile__container.css);
 @import url(../blocks/popup-profile/__title/popup-profile__title.css);
+@import url(../blocks/input/popup__input-profile_form_link-element.css);
+@import url(../blocks/input/popup__input-profile_form_name-element.css);
 /*подключение блока popup-profile*/
 
 /*подключение блока popup-slider*/
@@ -85,8 +88,6 @@
 @import url(../blocks/popup-slaider/__pictires/popup-slaider__pictires.css);
 @import url(../blocks/popup-slaider/__container/popup-slaider__container.css);
 @import url(../blocks/popup-slaider/__close/popup-slaider__close.css);
-@import url(../blocks/input/popup__input_form_link-element.css);
-@import url(../blocks/input/popup__input_form_name-element.css);
 
 /*подключение блока popup-slider*/
 
