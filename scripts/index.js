@@ -1,3 +1,8 @@
+//импорт класса FormValidator
+import { FormValidation } from './FormValidator.js';
+//импорт класса Card
+import { Card } from './Card.js';
+
 //массив элементов карточек
 
 const initialCards = [
@@ -26,6 +31,29 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
   },
 ];
+
+//переменные с формами
+const profileUserPopup = document.querySelector('.popup-user');
+const profileEditForm = profileUserPopup.querySelector('.popup__form');
+
+const profileCreateNewCard = document.querySelector('.popup-profile');
+const profileCreateFormNewCard = profileCreateNewCard.querySelector('.popup__form');
+
+// функция с селекторами из задания
+const settings = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible',
+};
+
+const addCardFormValidation = new FormValidation(settings, profileEditForm);
+const createNewCardFormValidation = new FormValidation(settings, profileCreateFormNewCard);
+
+addCardFormValidation.enableValidation();
+createNewCardFormValidation.enableValidation();
 
 // делаем выборку дом элементов
 const popupEditProfile = document.querySelector('.popup');
@@ -128,80 +156,81 @@ const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__
 
 // Находим элементы карточки
 const sectionElements = document.querySelector('.elements');
-const elementTemlate = document.querySelector('.template').content.querySelector('.element');
+// const elementTemlate = document.querySelector('.template').content.querySelector('.element');
 
-//  добавляем новую карту и отправляем форму
+// получаем новые значения
+const takingElemensValue = {
+  name: formInputName.value,
+  link: formInputLink.value,
+};
 
-function createProfileFormButton(name) {
-  // получаем новые значения
-  const takingElemensValue = {
-    name: formInputName.value,
-    link: formInputLink.value,
-  };
+const templateSelector = '.template';
+// функция увеличения картинки
+const watchImage = (name, link) => {
+  const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
 
+  profileSlaiderPictures.src = link;
+  profileSlaiderPictures.alt = name;
+  profileSlaiderSubtitle.textContent = name;
+
+  openPopup(profileSlaider);
+
+  profileSlaider.addEventListener('click', closePopupByClickWindow);
+  profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
+};
+
+function renderCard(data) {
   // создаем новую карту в начале массива
 
-  const newElement = createCard(takingElemensValue);
-  sectionElements.prepend(newElement);
+  const newElement = new Card(data, templateSelector, watchImage);
+  const card = newElement.generateNewCard();
+  sectionElements.prepend(card);
 
   closePopup(popupNewCard, profileForm.reset());
 }
 
 // Клонирование карточки и добавляем addEventListener
-function createCard({ name, link }) {
-  const elementsCard = elementTemlate.cloneNode(true);
+// function createCard({ name, link }) {
+//   const elementsCard = elementTemlate.cloneNode(true);
 
-  //получаем элемент  лайк и удаление со слушателями
-  const elementTitle = elementsCard.querySelector('.element__image-title');
-  const elementImage = elementsCard.querySelector('.element__image');
-  const elementLikeButton = elementsCard.querySelector('.element__like');
-  const elementDeleteButton = elementsCard.querySelector('.element__delete');
+//   //получаем элемент  лайк и удаление со слушателями
+//   const elementTitle = elementsCard.querySelector('.element__image-title');
+//   const elementImage = elementsCard.querySelector('.element__image');
+//   const elementLikeButton = elementsCard.querySelector('.element__like');
+//   const elementDeleteButton = elementsCard.querySelector('.element__delete');
 
-  //присваемваем значения
-  elementTitle.textContent = name;
-  elementImage.src = link;
-  elementImage.alt = name;
+//   //присваемваем значения
+//   elementTitle.textContent = name;
+//   elementImage.src = link;
+//   elementImage.alt = name;
 
-  //слушатели событий удаления лайка
-  elementLikeButton.addEventListener('click', hendlerLikeCard);
-  elementDeleteButton.addEventListener('click', hendlerDeleteCard);
+//   //слушатели событий удаления лайка
+//   elementLikeButton.addEventListener('click', hendlerLikeCard);
+//   elementDeleteButton.addEventListener('click', hendlerDeleteCard);
 
-  //получаем элементы из shadowDom по клику для увеличения картинки
-  elementImage.addEventListener('click', () => {
-    openPopup(profileSlaider);
-    profileSlaiderPictures.src = link;
-    profileSlaiderSubtitle.textContent = name;
-    profileSlaiderPictures.alt = name;
-  });
+//   //получаем элементы из shadowDom по клику для увеличения картинки
+//   elementImage.addEventListener('click', () => {
+//     openPopup(profileSlaider);
+//     profileSlaiderPictures.src = link;
+//     profileSlaiderSubtitle.textContent = name;
+//     profileSlaiderPictures.alt = name;
+//   });
 
-  return elementsCard;
-}
+//   return elementsCard;
+// }
 
 // перебор массива и добавление элементов
-initialCards.forEach(function ({ name, link }) {
-  const forEachArray = createCard({ name, link });
-  sectionElements.append(forEachArray);
+initialCards.forEach(function (data, sectionElements) {
+  renderCard(data, sectionElements);
 });
-
-// добавляем лайк
-function hendlerLikeCard(evt) {
-  evt.target.classList.toggle('element_change-like');
-}
-
-//удаляем карточку
-function hendlerDeleteCard(evt) {
-  evt.target.closest('.element').remove();
-}
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
 profileAddButton.addEventListener('click', () => openPopup(popupNewCard));
 profileRemoveButton.addEventListener('click', () => closePopup(popupNewCard));
-profileCreateButton.addEventListener('click', createProfileFormButton);
+profileCreateButton.addEventListener('click');
 
 //слушатель закрытие попап слайдера
-profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 
 //слушатели закрытия модального окна кликом по странице
-profileSlaider.addEventListener('click', closePopupByClickWindow);
 popupEditProfile.addEventListener('click', closePopupByClickWindow);
 popupNewCard.addEventListener('click', closePopupByClickWindow);
