@@ -20,8 +20,6 @@ export class Card {
     return document.querySelector(this._cardTemplateSelector).content.querySelector('.element');
   };
 
-  _addEventListeners = () => {};
-
   generateNewCard() {
     const elementTemlate = this._getCardTemplate();
 
@@ -47,4 +45,4 @@ export class Card {
   }
 }
 
-new Card({ name: '123', link: '1223456' }, '.template');
+new Card({ name: '', link: '' }, '.template');
