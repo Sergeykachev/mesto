@@ -23,26 +23,27 @@ export class Card {
   generateNewCard() {
     const elementTemlate = this._getCardTemplate();
 
-    const elementsCard = elementTemlate.cloneNode(true);
-
+    this._elementsCard = elementTemlate.cloneNode(true);
+    this._setEventListener();
     //получаем элемент  лайк и удаление со слушателями
-    const elementTitle = elementsCard.querySelector('.element__image-title');
-    const elementImage = elementsCard.querySelector('.element__image');
-    const elementLikeButton = elementsCard.querySelector('.element__like');
-    const elementDeleteButton = elementsCard.querySelector('.element__delete');
-
+    this._elementTitle = this._elementsCard.querySelector('.element__image-title');
     //присваемваем значения
-    elementTitle.textContent = this._data.name;
-    elementImage.src = this._data.link;
-    elementImage.alt = this._data.name;
+    this._elementTitle.textContent = this._data.name;
+    this._elementImage.src = this._data.link;
+    this._elementImage.alt = this._data.name;
 
     //слушатели событий удаления лайка
+
+    return this._elementsCard;
+  }
+
+  _setEventListener() {
+    const elementLikeButton = this._elementsCard.querySelector('.element__like');
+    const elementDeleteButton = this._elementsCard.querySelector('.element__delete');
+    this._elementImage = this._elementsCard.querySelector('.element__image');
+
     elementLikeButton.addEventListener('click', this._hendlerLikeCard);
     elementDeleteButton.addEventListener('click', this._hendlerDeleteCard);
-    elementImage.addEventListener('click', () => this._watchImageClick(this._data.name, this._data.link));
-
-    return elementsCard;
+    this._elementImage.addEventListener('click', () => this._watchImageClick(this._data.name, this._data.link));
   }
 }
-
-new Card({ name: '', link: '' }, '.template');
