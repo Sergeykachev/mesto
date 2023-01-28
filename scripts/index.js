@@ -133,7 +133,7 @@ popupOpenButtonNewUser.addEventListener('click', () => {
 });
 popupCloseButtonNewUser.addEventListener('click', () => closePopup(popupEditProfile));
 
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 // шесть карточек из коробки делаем выборку элементов
 const popupNewCard = document.querySelector('.popup-profile');
