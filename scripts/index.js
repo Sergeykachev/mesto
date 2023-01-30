@@ -81,7 +81,7 @@ function saveFormAddNewUser(evt) {
   profileElementTitle.textContent = formInputNewUserName.value;
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
-  closePopup(popupEditProfile, formAddNewUser.reset());
+  closePopup(popupEditProfile);
 }
 
 //получение значений в форму profile после открытия
@@ -133,7 +133,7 @@ popupOpenButtonNewUser.addEventListener('click', () => {
 });
 popupCloseButtonNewUser.addEventListener('click', () => closePopup(popupEditProfile));
 
-//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 // шесть карточек из коробки делаем выборку элементов
 const popupNewCard = document.querySelector('.popup-profile');
@@ -149,19 +149,19 @@ const profileSlaiderSubtitle = profileSlaider.querySelector('.popup-slaider__sub
 // Находим элементы карточки
 const sectionElements = document.querySelector('.elements');
 const templateSelector = '.template';
+//кнопка закрытия модального окна увеличения картинки
+const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
+// получаем значения из инпутов
+const inputCardName = document.querySelector('.popup__input_form_name-element');
+const inputCardlink = document.querySelector('.popup__input_form_link-element');
 
 // функция увеличения картинки
 const watchImage = (name, link) => {
-  const profileSlaiderCloseButton = profileSlaider.querySelector('.popup-slaider__close');
-
   profileSlaiderPictures.src = link;
   profileSlaiderPictures.alt = name;
   profileSlaiderSubtitle.textContent = name;
 
   openPopup(profileSlaider);
-
-  profileSlaider.addEventListener('click', closePopupByClickWindow);
-  profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 };
 
 function renderCard(data) {
@@ -174,13 +174,10 @@ function renderCard(data) {
 
 function createCardNewUser(evt) {
   evt.preventDefault();
-  // получаем значения из инпутов
-  const name = document.querySelector('.popup__input_form_name-element');
-  const link = document.querySelector('.popup__input_form_link-element');
   // присваиваем новые значения
   const takingElemensValue = {
-    name: name.value,
-    link: link.value,
+    name: inputCardName.value,
+    link: inputCardlink.value,
   };
 
   //создаем новую карту в начале массива
@@ -196,6 +193,7 @@ initialCards.forEach(function (data, sectionElements) {
 
 //слушатель закрытие попап слайдера
 profileCreateButton.addEventListener('click', createCardNewUser);
+profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
 profileAddButton.addEventListener('click', () => openPopup(popupNewCard));
@@ -204,3 +202,4 @@ profileRemoveButton.addEventListener('click', () => closePopup(popupNewCard));
 //слушатели закрытия модального окна кликом по странице
 popupEditProfile.addEventListener('click', closePopupByClickWindow);
 popupNewCard.addEventListener('click', closePopupByClickWindow);
+profileSlaider.addEventListener('click', closePopupByClickWindow);
