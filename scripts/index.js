@@ -140,6 +140,7 @@ const popupNewCard = document.querySelector('.popup-profile');
 const profileAddButton = profileElement.querySelector('.profile__add-button');
 const profileRemoveButton = popupNewCard.querySelector('.popup-profile__close');
 const profileCreateButton = popupNewCard.querySelector('.popup-profile__create');
+const profileNewCardForm = popupNewCard.querySelector('.popup__form');
 
 // получаем попап увеличения картинки
 const profileSlaider = document.querySelector('.popup-slaider');
@@ -184,6 +185,7 @@ function createCardNewUser(evt) {
   renderCard(takingElemensValue);
 
   closePopup(popupNewCard);
+  profileNewCardForm.reset();
 }
 
 // перебор массива и добавление элементов

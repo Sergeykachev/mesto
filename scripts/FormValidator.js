@@ -49,7 +49,7 @@ export class FormValidation {
   };
 
   // функция переключения активации кнопки
-  _toggleButton = (inputs, button) => {
+  _toggleButton = (inputs) => {
     // условия переключения активации кнопки
     if (this._hasInvalidInput(inputs)) {
       this._disabledSubmitButton(this._button);
