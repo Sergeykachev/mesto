@@ -82,6 +82,7 @@ function saveFormAddNewUser(evt) {
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
   closePopup(popupEditProfile);
+  formAddNewUser.reset();
 }
 
 //получение значений в форму profile после открытия
