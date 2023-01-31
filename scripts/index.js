@@ -82,7 +82,6 @@ function saveFormAddNewUser(evt) {
   profileElementSubtitle.textContent = formInputNewUserAbout.value;
 
   closePopup(popupEditProfile);
-  formAddNewUser.reset();
 }
 
 //получение значений в форму profile после открытия
@@ -186,7 +185,6 @@ function createCardNewUser(evt) {
   renderCard(takingElemensValue);
 
   closePopup(popupNewCard);
-  profileNewCardForm.reset();
 }
 
 // перебор массива и добавление элементов
@@ -199,7 +197,10 @@ profileCreateButton.addEventListener('click', createCardNewUser);
 profileSlaiderCloseButton.addEventListener('click', () => closePopup(profileSlaider));
 
 // регистрируем обработчики событий по клику элементов добавления  пользователя в profile.
-profileAddButton.addEventListener('click', () => openPopup(popupNewCard));
+profileAddButton.addEventListener('click', () => {
+  profileNewCardForm.reset();
+  openPopup(popupNewCard);
+});
 profileRemoveButton.addEventListener('click', () => closePopup(popupNewCard));
 
 //слушатели закрытия модального окна кликом по странице
