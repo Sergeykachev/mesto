@@ -5,15 +5,17 @@ import { Card } from './Card.js';
 //импорт класса Section
 import { Section } from './Section.js';
 const section = new Section({ items, renderer }, sectionElements); //не работает, что-то не то
-section.renderCard(data); /*как присвоить значения в функцию ниже
+section.renderer(data);
 
-function renderCard(data) {
+function renderer(data) {
   // создаем новую карту из массива
 
   const newElement = new Card(data, templateSelector, watchImage);
   const card = newElement.generateNewCard();
   sectionElements.prepend(card);
-} */
+}
+
+// в renderCard добавить параметр renderer
 
 //массив элементов карточек
 
